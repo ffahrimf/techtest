@@ -72,7 +72,7 @@ class PegawaiController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'nama' => 'required|max:100|unique:pegawai.nama,' . $id . ',id',
+            'nama' => 'required|max:100|unique:pegawai,nama,' . $id . ',id',
             'jabatan' => 'required',
             'alamat' => 'required'
         ]);
@@ -80,7 +80,7 @@ class PegawaiController extends Controller
         $pegawai = Pegawai::findOrFail($id);
         $pegawai->update($validated);
 
-        Alert::info('Success', 'Pegawai has been updated !');
+        Alert::info('Success', 'Pegawai has been updated!');
         return redirect('/pegawai');
     }
 
@@ -88,16 +88,16 @@ class PegawaiController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy($id)
-{
-    try {
-        $deletedpegawai = Pegawai::findOrFail($id);
-        $deletedpegawai->delete();
+    {
+        try {
+            $deletedpegawai = Pegawai::findOrFail($id);
+            $deletedpegawai->delete();
 
-        Alert::error('Success', 'Pegawai telah dihapus!');
-        return redirect('/pegawai');
-    } catch (Exception $ex) {
-        Alert::warning('Error', 'Tidak dapat menghapus, Pegawai sedang digunakan!');
-        return redirect('/pegawai');    
+            Alert::error('Success', 'Pegawai telah dihapus!');
+            return redirect('/pegawai');
+        } catch (Exception $ex) {
+            Alert::warning('Error', 'Tidak dapat menghapus, Pegawai sedang digunakan!');
+            return redirect('/pegawai');
+        }
     }
-}
 }

@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\{BarangController,PegawaiController};
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{BarangController, PegawaiController};
+use Illuminate\Support\Facades\Route;;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +29,5 @@ Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 //route barang
 Route::resource('/barang', BarangController::class)->middleware('auth');
 
+//route pegawai
 Route::resource('/pegawai', PegawaiController::class)->middleware('auth');
