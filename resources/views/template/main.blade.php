@@ -41,6 +41,9 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="/" class="nav-link">Barang</a>
                 </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="/" class="nav-link">Pegawai</a>
+                </li>
             </ul>
 
             <!-- Right navbar links -->
@@ -225,6 +228,14 @@
                                 <i class="nav-icon fa-solid fa-box"></i>
                                 <p>
                                     Barang
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pegawai" class="nav-link">
+                                <i class="nav-icon fa-solid fa-user"></i>
+                                <p>
+                                    Pegawai
                                 </p>
                             </a>
                         </li>
