@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\{BarangController, PegawaiController};
-use Illuminate\Support\Facades\Route;;
+use App\Http\Controllers\{AuthController,StartController,DashboardController,BarangController, PegawaiController};
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +13,9 @@ use Illuminate\Support\Facades\Route;;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//route login
+
+// route login
+// Route::get('/', [StartController::class, 'index']);
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticate']);
 Route::get('/register', [AuthController::class, 'register']);
@@ -26,9 +26,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 
-//route barang
+// route barang
 Route::resource('/barang', BarangController::class)->middleware('auth');
 Route::get('/print', [BarangController::class, 'printBarang'])->middleware('auth');
 
-//route pegawai
+// route pegawai
 Route::resource('/pegawai', PegawaiController::class)->middleware('auth');
