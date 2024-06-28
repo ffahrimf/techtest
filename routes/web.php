@@ -28,6 +28,7 @@ Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 
 //route barang
 Route::resource('/barang', BarangController::class)->middleware('auth');
+Route::get('/print', [BarangController::class, 'printBarang'])->middleware('auth');
 
 //route pegawai
 Route::resource('/pegawai', PegawaiController::class)->middleware('auth');

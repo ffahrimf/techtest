@@ -6,6 +6,7 @@ use App\Models\Barang;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Exception;
+use PDF;
 
 class BarangController extends Controller
 {
@@ -55,6 +56,16 @@ class BarangController extends Controller
     public function show(Barang $barang)
     {
         //
+    }
+
+    public function printBarang()
+    {
+        $dosen = Barang::all();
+        $data = ['tbarang' => $dosen];
+
+        $pdf = PDF::loadView('barang.barang-print', $data);
+
+        return $pdf->stream('view-barang.pdf');
     }
 
     /**
