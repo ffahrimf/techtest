@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AuthController,StartController,DashboardController,BarangController, PegawaiController};
+use App\Http\Controllers\{AuthController, StartController, DashboardController, MobilController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,9 +26,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 
-// route barang
-Route::resource('/barang', BarangController::class)->middleware('auth');
-Route::get('/print', [BarangController::class, 'printBarang'])->middleware('auth');
-
-// route pegawai
-Route::resource('/pegawai', PegawaiController::class)->middleware('auth');
+// route mobil
+Route::resource('/mobil', MobilController::class)->middleware('auth');
+Route::get('/print', [MobilController::class, 'printMobil'])->middleware('auth');

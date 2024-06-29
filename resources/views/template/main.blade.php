@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title') | eProucts</title>
+  <title>@yield('title') | eMobil</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -38,10 +38,7 @@
           <a href="/" class="nav-link">Dashboard</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="/" class="nav-link">Barang</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="/" class="nav-link">Pegawai</a>
+          <a href="/" class="nav-link">Mobil</a>
         </li>
       </ul>
 
@@ -179,7 +176,7 @@
       <a href="/dashboard" class="brand-link">
         <img src="/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light">Andis Dev</span>
+        <span class="brand-text font-weight-light">ffahrimf</span>
       </a>
 
       <!-- Sidebar -->
@@ -221,21 +218,14 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/barang" class="nav-link">
+              <a href="/mobil" class="nav-link">
                 <i class="nav-icon fa-solid fa-box"></i>
                 <p>
-                  Barang
+                  Mobil
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="/pegawai" class="nav-link">
-                <i class="nav-icon fa-solid fa-user"></i>
-                <p>
-                  Pegawai
-                </p>
-              </a>
-            </li>
+           
             <li class="nav-item mt-3">
               <a class="log-out ml-3" href="#" class="nav-link">
                 <i class="nav-icon fa-solid fa-power-off" style="color: red;"></i>

@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Barang')
+@section('title', 'Mobil')
 @section('content')
 
 <div class="content-wrapper">
@@ -31,11 +31,11 @@
             <div class="card-header">
               <div class="text-right">
                 <div class="">
-                  <a href="/print" class="btn btn-primary mr-1"><i class="fa-solid fa-print"></i>
+                  <a href="/print" target="blank" class="btn btn-primary mr-1"><i class="fa-solid fa-print"></i>
                     Print
-                    Barang</a>
-                  <a href="/barang/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add
-                    Barang</a>
+                    Mobil</a>
+                  <a href="/mobil/create" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add
+                    Mobil</a>
                 </div>
               </div>
             </div>
@@ -48,30 +48,28 @@
                     <th>#</th>
                     <th>Nama</th>
                     <th>Category</th>
-                    <th>Supplier</th>
+                    <th>Color</th>
                     <th>Stock</th>
                     <th>Price</th>
-                    <th>Note</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($barang as $data)
+                  @foreach ($mobil as $data)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $data->name }}</td>
                     <td>{{ $data->category }}</td>
-                    <td> {{ $data->supplier }}</td>
+                    <td> {{ $data->color }}</td>
                     <td>{{ $data->stock }}</td>
                     <td>Rp. {{ number_format($data->price, 0) }}</td>
-                    <td>{{ $data->note }}</td>
                     <td>
-                      <form class="d-inline" action="/barang/{{ $data->id_barang }}/edit" method="GET">
+                      <form class="d-inline" action="/mobil/{{ $data->id_mobil }}/edit" method="GET">
                         <button type="submit" class="btn btn-warning btn-sm mr-1" style="color: white;">
                           <i class="fa-solid fa-pen"></i> Edit
                         </button>
                       </form>
-                      <form class="d-inline" action="/barang/{{ $data->id_barang }}" method="POST">
+                      <form class="d-inline" action="/mobil/{{ $data->id_mobil }}" method="POST">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger btn-sm" id="btn-delete"><i

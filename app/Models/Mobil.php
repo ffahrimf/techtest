@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Barang extends Model
+class Mobil extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id_barang';
+    protected $primaryKey = 'id_mobil';
 
-    protected $table = 'barangs';
+    protected $table = 't_mobil';
 
-    protected $guarded = ['id_barang'];
+    protected $guarded = ['id_mobil'];
 }

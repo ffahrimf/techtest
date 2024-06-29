@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Data Barang</title>
+  <title>Data Mobil</title>
   <style>
   body {
     font-family: Arial, sans-serif;
@@ -32,29 +32,27 @@
 </head>
 
 <body>
-  <h1>Data Barang</h1>
+  <h1>Data Mobil</h1>
   <table>
     <thead>
       <tr>
         <th>No</th>
         <th>Nama</th>
         <th>Kategori</th>
-        <th>Supplier</th>
+        <th>Warna</th>
         <th>Stok</th>
         <th>Harga</th>
-        <th>Catatan</th>
       </tr>
     </thead>
     <tbody>
-      @foreach ($tbarang as $data)
+      @foreach ($t_mobil as $data)
       <tr>
         <td>{{ $loop->iteration }}</td>
         <td>{{ $data->name }}</td>
         <td>{{ $data->category }}</td>
-        <td>{{ $data->supplier }}</td>
+        <td>{{ $data->color }}</td>
         <td>{{ $data->stock }}</td>
         <td>Rp. {{ number_format($data->price, 0) }}</td>
-        <td>{{ $data->note }}</td>
       </tr>
       @endforeach
     </tbody>
