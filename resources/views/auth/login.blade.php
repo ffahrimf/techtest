@@ -1,77 +1,59 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ $title }} | Fahri Muh </title>
-
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-
-  <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
-
-  {{-- <link rel="stylesheet" href="/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css"> --}}
-
-  <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
+    <title>Login Page | SIPAGUNG</title>
 
 </head>
+<body>
+@include('sweetalert::alert')
 
-<body class="hold-transition login-page">
+<section class="bg-gray-50 dark:bg-gray-900 font-montserrat">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+          <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+          Sistem Informasi Desa Payungagung    
+      </a>
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                  Masuk ke akun anda
+              </h1>
+              <form class="needs-validation space-y-4 md:space-y-6" novalidate action="/login" method="POST">
+                  @csrf
 
-  @include('sweetalert::alert')
-
-  <div class="login-box">
-
-    <div class="card card-outline card-primary">
-      <div class="card-header text-center">
-        <a href="/" class="h1"><b>Fahri</b> Muhammad</a>
+                  <div>
+                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                      <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@gmail.com" required="">
+                  </div>
+                  <div>
+                      <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                      <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                  </div>
+                  <div class="flex items-center justify-between">
+                      <div class="flex items-start">
+                      <div class="flex items-center h-5">
+                            <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-teal-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-teal-600 dark:ring-offset-gray-800">
+                          </div>
+                          <div class="ml-3 text-sm">
+                            <label for="remember" class="text-gray-500 dark:text-gray-300">Ingat saya</label>
+                          </div>
+                      </div>
+                      <a href="#" class="text-sm font-medium text-teal-600 hover:underline dark:text-teal-500">Lupa password?</a>
+                  </div>
+                  <button type="submit" class="w-full text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">Log in</button>
+                  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Belum punya akun? <a href="#" class="font-medium text-teal-600 hover:underline dark:text-teal-500">Register</a>
+                  </p>
+              </form>
+          </div>
       </div>
-      <div class="card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
-        <form class="needs-validation" novalidate action="/login" method="POST">
-          @csrf
-          <div class="input-group mb-3">
-            <input type="email" name="email" class="form-control" placeholder="Email" required>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
-              </div>
-            </div>
-          </div>
-          <div class="input-group mb-3">
-            <input type="password" name="password" class="form-control" placeholder="Password" required>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-8">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember">
-                <label for="remember">
-                  Remember Me
-                </label>
-              </div>
-            </div>
-
-            <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-            </div>
-            <p class="mb-0">
-              <a href="/register" class="text-center">Register a new membership</a>
-            </p>
-          </div>
-        </form>
-      </div>
-
-    </div>
-
   </div>
+</section>
 
-  <script src="/assets/plugins/jquery/jquery.min.js"></script>
+<script src="/assets/plugins/jquery/jquery.min.js"></script>
 
   <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -95,6 +77,6 @@
     }, false);
   })();
   </script>
-</body>
 
+</body>
 </html>

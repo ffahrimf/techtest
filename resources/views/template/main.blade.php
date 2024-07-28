@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title') | eMobil</title>
+  <title>@yield('title') | SIPAGUNG</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -39,6 +39,9 @@
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="/" class="nav-link">Mobil</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="/" class="nav-link">Penduduk</a>
         </li>
       </ul>
 
@@ -176,7 +179,7 @@
       <a href="/dashboard" class="brand-link">
         <img src="/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light">ffahrimf</span>
+        <span class="brand-text font-weight-light">SIPAGUNG</span>
       </a>
 
       <!-- Sidebar -->
@@ -225,6 +228,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/penduduk" class="nav-link">
+                <i class="nav-icon fa-solid fa-user"></i>
+                <p>
+                  Penduduk
+                </p>
+              </a>
+            </li>
            
             <li class="nav-item mt-3">
               <a class="log-out ml-3" href="#" class="nav-link">
@@ -265,7 +276,7 @@
 
       </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; 2024 <a href="https://ffahrimf.vercel.app">Fahri Muh</a>.</strong> All rights
+      <strong>Copyright &copy; 2024 <a href="https://ffahrimf.vercel.app">SIPAGUNG</a>.</strong> All rights
       reserved.
     </footer>
   </div>

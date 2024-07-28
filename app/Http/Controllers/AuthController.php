@@ -70,6 +70,6 @@ class AuthController extends Controller
         request()->session()->invalidate();
         request()->session()->regenerateToken();
         Alert::success('Success', 'Log out success !');
-        return redirect('/login');
+        return redirect('/');
     }
 }
