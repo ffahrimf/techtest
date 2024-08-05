@@ -30,6 +30,9 @@ class Penduduk extends Model
         'pendidikan',
         'pekerjaan',
         'golongan_darah',
-        'kewarganegaraan'
+        'shdk',
+        'ayah',
+        'ibu',
+        'kepala_keluarga'
     ];
 }

@@ -13,7 +13,7 @@
 <section class="bg-gray-50 dark:bg-gray-900 font-montserrat">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-          <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+          <img class="w-10 h-10 mr-2" src="assets/img/mountain.png" alt="logo">
           Sistem Informasi Desa Payungagung    
       </a>
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -44,9 +44,9 @@
                       <a href="#" class="text-sm font-medium text-teal-600 hover:underline dark:text-teal-500">Lupa password?</a>
                   </div>
                   <button type="submit" class="w-full text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">Log in</button>
-                  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Belum punya akun? <a href="#" class="font-medium text-teal-600 hover:underline dark:text-teal-500">Register</a>
-                  </p>
+                  {{-- <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Belum punya akun? <a href="/register" class="font-medium text-teal-600 hover:underline dark:text-teal-500">Daftar</a>
+                  </p> --}}
               </form>
           </div>
       </div>

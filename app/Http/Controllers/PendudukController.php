@@ -15,19 +15,26 @@ class PendudukController extends Controller
      */
     public function index()
     {
-        $penduduk = Penduduk::orderBy('nik', 'asc')->get();
+        $user = auth()->user();
 
-        return view('penduduk.penduduk', [
+        if ($user->level == 'Admin') {
+            $penduduk = Penduduk::orderBy('nik', 'asc')->get();
+        } else {
+            $penduduk = Penduduk::where('dusun', $user->level)->orderBy('nik', 'asc')->get();
+        }
+
+        return view('demografi.penduduk.penduduk', [
             'penduduk' => $penduduk
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('penduduk.penduduk-add');
+        return view('demografi.penduduk.penduduk-add');
     }
 
     /**
@@ -52,7 +59,10 @@ class PendudukController extends Controller
         'pendidikan' => 'required|max:50',
         'pekerjaan' => 'required|max:20',
         'golongan_darah' => 'required|max:20',
-        'kewarganegaraan' => 'required|max:20'
+        'shdk' => 'required|max:20',
+        'ayah' => 'required|max:50',
+        'ibu' => 'required|max:50',
+        'kepala_keluarga' => 'required|max:50',
     ]);
     
     // Simpan data
@@ -75,14 +85,16 @@ class PendudukController extends Controller
     }
 
     public function printPenduduk()
-    {
-        $penduduk = Penduduk::all();
-        $data = ['t_penduduk' => $penduduk];
+{
+    $penduduk = Penduduk::all();
+    $data = ['t_penduduk' => $penduduk];
 
-        $pdf = PDF::loadView('penduduk.penduduk-print', $data);
+    $pdf = PDF::loadView('demografi.penduduk.penduduk-print', $data)
+              ->setPaper('a4', 'landscape');
 
-        return $pdf->stream('view-penduduk.pdf');
-    }
+    return $pdf->stream('view-penduduk.pdf');
+}
+
 
     /**
      * Show the form for editing the specified resource.
@@ -91,7 +103,7 @@ class PendudukController extends Controller
     {
         $penduduk = Penduduk::findOrFail($nik);
 
-        return view('penduduk.penduduk-edit', [
+        return view('demografi.penduduk.penduduk-edit', [
             'penduduk' => $penduduk,
         ]);
     }
@@ -102,7 +114,7 @@ class PendudukController extends Controller
     public function update(Request $request, $nik)
 {
     $validated = $request->validate([
-        'nik' => 'required|digits_between:1,16|unique:penduduk,nik,' . $nik . ',nik',
+        'nik' => 'required|digits_between:1,16|unique:t_penduduk,nik,' . $nik . ',nik',
         'no_kk' => 'required|digits_between:1,16',
         'nama' => 'required|max:50',
         'tempat_lahir' => 'required|max:20',
@@ -117,7 +129,10 @@ class PendudukController extends Controller
         'pendidikan' => 'required|max:50',
         'pekerjaan' => 'required|max:20',
         'golongan_darah' => 'required|max:20',
-        'kewarganegaraan' => 'required|max:20'
+        'shdk' => 'required|max:20',
+        'ayah' => 'required|max:50',
+        'ibu' => 'required|max:50',
+        'kepala_keluarga' => 'required|max:50',
     ]);
 
     $penduduk = Penduduk::findOrFail($nik);
