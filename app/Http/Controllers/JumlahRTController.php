@@ -25,16 +25,5 @@ class JumlahRTController extends Controller
         //
     }
 
-    public function printJumlahRT()
-{
-    $penduduk = Penduduk::all();
-    $data = ['t_penduduk' => $penduduk];
-
-    $pdf = PDF::loadView('demografi.jumlahrt.jumlahrt-print', $data)
-              ->setPaper('a4', 'landscape');
-
-    return $pdf->stream('view-jumlahrt.pdf');
-}
-
 
 }

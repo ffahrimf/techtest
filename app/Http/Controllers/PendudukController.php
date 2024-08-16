@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Penduduk;
+use App\Models\{Penduduk,Pekerjaan};
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Exception;
@@ -23,7 +23,7 @@ class PendudukController extends Controller
             $penduduk = Penduduk::where('dusun', $user->level)->orderBy('nik', 'asc')->get();
         }
 
-        return view('demografi.penduduk.penduduk', [
+        return view('master.penduduk.penduduk', [
             'penduduk' => $penduduk
         ]);
     }
@@ -34,7 +34,11 @@ class PendudukController extends Controller
      */
     public function create()
     {
-        return view('demografi.penduduk.penduduk-add');
+
+        $pekerjaanList = Pekerjaan::orderBy('nama', 'asc')->get();
+        return view('master.penduduk.penduduk-add', [
+            'pekerjaanList' => $pekerjaanList
+        ]);
     }
 
     /**
@@ -84,29 +88,34 @@ class PendudukController extends Controller
         //
     }
 
-    public function printPenduduk()
-{
-    $penduduk = Penduduk::all();
-    $data = ['t_penduduk' => $penduduk];
+//     public function printPenduduk()
+// {
+//     $penduduk = Penduduk::all();
+//     $data = ['t_penduduk' => $penduduk];
 
-    $pdf = PDF::loadView('demografi.penduduk.penduduk-print', $data)
-              ->setPaper('a4', 'landscape');
+//     $pdf = PDF::loadView('master.penduduk.penduduk-print', $data)
+//               ->setPaper('a4', 'landscape');
 
-    return $pdf->stream('view-penduduk.pdf');
-}
+//     return $pdf->stream('view-penduduk.pdf');
+// }
 
 
-    /**
+/**
      * Show the form for editing the specified resource.
      */
     public function edit($nik)
-    {
-        $penduduk = Penduduk::findOrFail($nik);
+{
+    $penduduk = Penduduk::with('pekerjaan')->findOrFail($nik); // Mengambil penduduk beserta relasi pekerjaan
+    $pekerjaanList = Pekerjaan::orderBy('nama', 'asc')->get(); // Mengambil semua pekerjaan untuk dropdown
 
-        return view('demografi.penduduk.penduduk-edit', [
-            'penduduk' => $penduduk,
-        ]);
-    }
+    return view('master.penduduk.penduduk-edit', [
+        'penduduk' => $penduduk,
+        'pekerjaanList' => $pekerjaanList
+    ]);
+}
+
+    
+
 
     /**
      * Update the specified resource in storage.
@@ -160,4 +169,6 @@ class PendudukController extends Controller
             return redirect('/penduduk');
         }
     }
+
+    
 }

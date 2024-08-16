@@ -21,6 +21,6 @@ class CekLevel
         }
         
         // Redirect to the homepage if the user's level is not allowed
-        return redirect('/');
+        return redirect('/login');
     }
 }

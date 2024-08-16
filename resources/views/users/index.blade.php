@@ -39,49 +39,61 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                              <div style="overflow-x: scroll"> 
-                              <table id="example1" class="table table-striped table-bordered table-hover text-center"
-                                    style="width: 100%">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nama</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($users as $data)
+                                <div style="overflow-x: scroll">
+                                    <table id="example1" class="table table-striped table-bordered table-hover text-center"
+                                        style="width: 100%">
+                                        <thead>
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $data->name }}</td>
-                                                <td>{{ $data->email }}</td>
-                                                <td>{{ $data->level }}</td>
-                                                <td>
-                                                    <form class="d-inline" action="/users/{{ $data->id_user }}/edit"
-                                                        method="GET">
-                                                        <button type="submit" class="btn btn-warning btn-sm mr-1"
-                                                            style="color: white;">
-                                                            <i class="fa-solid fa-pen"></i> Edit
-                                                        </button>
-                                                    </form>
-                                                    <form class="d-inline" action="/users/{{ $data->id_user }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button type="submit" class="btn btn-danger btn-sm"
-                                                            id="btn-delete">
-                                                            <i class="fa-solid fa-trash-can"></i> Delete
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                <th>#</th>
+                                                <th>Nama</th>
+                                                <th>Email</th>
+                                                {{-- <th>Password</th> --}}
+                                                <th>Role</th>
+                                                <th>Aksi</th>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($users as $data)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $data->name }}</td>
+                                                    <td>{{ $data->email }}</td>
+                                                    {{-- <td>
+                                                        <input type="password" value="{{ $data->password }}" readonly
+                                                            class="form-control-plaintext text-center"
+                                                            style="border: none; background-color: transparent;" />
+                                                    </td> --}}
+                                                    <td>{{ $data->level }}</td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-info">Action</button>
+                                                            <button type="button"
+                                                                class="btn btn-info dropdown-toggle dropdown-icon"
+                                                                data-toggle="dropdown">
+                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                            </button>
+                                                            <div class="dropdown-menu" role="menu">
+                                                                <a class="dropdown-item"
+                                                                    href="/users/{{ $data->id_user }}/edit">Edit
+                                                                </a>
+                                                                <form action="/users/{{ $data->id_user }}" method="POST"
+                                                                    class="d-inline">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <button type="submit" class="dropdown-item text-danger"
+                                                                        id="btn-delete">Delete
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </td>
 
-                            </div>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+
+                                </div>
                             </div>
                             <!-- /.card-body -->
                         </div>

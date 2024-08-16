@@ -39,6 +39,45 @@
             <a href="/penduduk" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-teal">
+            <div class="inner">
+              <h3>{{ $disabilitas }}</h3>
+              <p class="font-weight-bold">Disabilitas</p>
+            </div>
+            <div class="icon">
+              <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <a href="/disabilitas" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <h3>{{ $pekerjaanCount }}</h3>
+              <p class="font-weight-bold">Pekerjaan</p>
+            </div>
+            <div class="icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <a href="/pekerjaan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-gray">
+            <div class="inner">
+              <h3>{{ $pekerjaanCount }}</h3>
+              <p class="font-weight-bold">Pekerjaan</p>
+            </div>
+            <div class="icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <a href="/pekerjaan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
         {{-- <div class="col-lg-3 col-6">
           <!-- small box -->
           <div class="small-box bg-warning">

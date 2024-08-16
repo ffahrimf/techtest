@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title') | SIPAGUNG</title>
+    <title>@yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -21,11 +21,9 @@
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
     <link rel="shortcut icon" href="assets/img/mountain.png" type="image/x-icon">
 
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css','resources/js/app.js'])
 
 </head>
-
-
 
 <body class="hold-transition sidebar-mini">
 
@@ -47,7 +45,7 @@
                 {{-- <li class="nav-item d-none d-sm-inline-block">
           <a href="/" class="nav-link">Mobil</a>
         </li> --}}
-                
+
             </ul>
 
             <!-- Right navbar links -->
@@ -192,10 +190,10 @@
                 <!-- Sidebar user panel (optional) -->
                 {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image"> --}}
-                        {{-- <img src="/assets/dist/img/boy.png" class="" alt="User Image"> --}}
-                        {{-- <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> --}}
-                        {{-- <img src="/assets/dist/img/boy.png" class="img-circle elevation-2" alt="User Image"> --}}
-                    {{-- </div>
+                {{-- <img src="/assets/dist/img/boy.png" class="" alt="User Image"> --}}
+                {{-- <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> --}}
+                {{-- <img src="/assets/dist/img/boy.png" class="img-circle elevation-2" alt="User Image"> --}}
+                {{-- </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ auth()->user()->name }}</a>
                     </div>
@@ -203,12 +201,12 @@
 
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                      <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                      <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+                        <a href="/dashboard" class="d-block">{{ auth()->user()->name }}</a>
                     </div>
-                  </div>
+                </div>
 
                 <!-- SidebarSearch Form -->
                 {{-- <div class="form-inline">
@@ -249,75 +247,110 @@
                         @if (auth()->user()->level == 'Admin')
                             <li class="nav-item">
                                 <a href="/users" class="nav-link">
-                                    <i class="nav-icon fa-solid fa-user"></i>
+                                    <i class="nav-icon fa-solid fa-key"></i>
                                     <p>
-                                        User
+                                        User Management
                                     </p>
                                 </a>
                             </li>
                         @endif
 
 
-                        
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                              <i class="nav-icon fas fa-tachometer-alt"></i>
-                              <p>
-                                Demografi
-                                <i class="right fas fa-angle-left"></i>
-                              </p>
+                                <i class="nav-icon fas fa-database"></i>
+                                <p>
+                                    Master
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            @if (auth()->user()->level == 'Admin')
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/mpekerjaan" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Pekerjaan</p>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            @endif
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/penduduk" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Penduduk</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/mdisabilitas" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Penyandang Disabilitas</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-simple"></i>
+                                <p>
+                                    Demografi
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
                             </a>
                             <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                <a href="/penduduk" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Penduduk</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/pendidikan" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Pendidikan</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/pekerjaan" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Pekerjaan</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/agama" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Agama</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/jeniskelamin" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Jenis Kelamin</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/umur" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Umur</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/jumlahrt" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Data RT Tiap Dusun</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="/disabilitas" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Penyandang Disabilitas</p>
-                                </a>
-                              </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/pendidikan" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pendidikan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pekerjaan" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pekerjaan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/agama" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agama</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/jeniskelamin" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Jenis Kelamin</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/umur" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Umur</p>
+                                    </a>
+                                </li>
+                                @if (auth()->user()->level == 'Admin')
+                                    <li class="nav-item">
+                                        <a href="/jumlahrt" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Luas Wilayah
+                                            </p>
+                                        </a>
+                                    </li>
+                                @endif
+                                <li class="nav-item">
+                                    <a href="/disabilitas" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Penyandang Disabilitas</p>
+                                    </a>
+                                </li>
                             </ul>
-                          </li>
+                        </li>
                         <li class="nav-item mt-3">
                             <form id="logging-out" action="/logout" method="POST" style="display: none;">
                                 @csrf
@@ -352,16 +385,6 @@
         {{-- content here --}}
         <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
-
         <!-- Main Footer -->
         <footer class="main-footer">
             <!-- To the right -->
@@ -372,6 +395,18 @@
             <strong>Copyright &copy; 2024 <a href="https://ffahrimf.vercel.app">SIPAGUNG</a>.</strong> All rights
             reserved.
         </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+
+
     </div>
     <!-- ./wrapper -->
 
@@ -382,20 +417,20 @@
     <!-- Bootstrap 4 -->
     <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- DataTables  & Plugins -->
-<script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="/assets/plugins/jszip/jszip.min.js"></script>
-<script src="/assets/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="/assets/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/jszip/jszip.min.js"></script>
+    <script src="/assets/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="/assets/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-    
+
     <!-- AdminLTE App -->
     <script src="/assets/dist/js/adminlte.min.js"></script>
     @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
@@ -421,64 +456,128 @@
         });
     </script>
 
-<script>
-    $(function () {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": [
-                {
-                    extend: "copy",
-                    exportOptions: {
-                        columns: ':not(:last-child)'
-                    }
-                },
-                {
-                    extend: "csv",
-                    exportOptions: {
-                        columns: ':not(:last-child)'
-                    }
-                },
-                {
-                    extend: "excel",
-                    exportOptions: {
-                        columns: ':not(:last-child)'
-                    }
-                },
-                {
-                    extend: "pdf",
-                    orientation: "landscape",
-                    pageSize: "A4",
-                    customize: function (doc) {
-                        doc.defaultStyle.fontSize = 8;
-                        doc.pageMargins = [10, 10, 10, 10];
+    <script>
+        $(function() {
+            // Initialize DataTable for #example1
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": [{
+                        extend: "copy",
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
                     },
-                    exportOptions: {
-                        columns: ':not(:last-child)'
-                    }
-                },
-                {
-                    extend: "print",
-                    customize: function (win) {
-                        $(win.document.body)
-                            .css('font-size', '8pt')
-                            .prepend(
-                                '<style>@page { size: A4 landscape; margin: 10mm; }</style>'
-                            );
-                        $(win.document.body).find('table')
-                            .addClass('compact')
-                            .css('font-size', 'inherit');
+                    {
+                        extend: "csv",
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
                     },
-                    exportOptions: {
-                        columns: ':not(:last-child)'
-                    }
-                },
-                "colvis"
-            ]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    });
-</script>
+                    {
+                        extend: "excel",
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
+                    },
+                    {
+                        extend: "pdf",
+                        orientation: "landscape",
+                        pageSize: "A4",
+                        customize: function(doc) {
+                            doc.defaultStyle.fontSize = 8;
+                            doc.pageMargins = [10, 10, 10, 10];
+                        },
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
+                    },
+                    {
+                        extend: "print",
+                        customize: function(win) {
+                            $(win.document.body)
+                                .css('font-size', '8pt')
+                                .prepend(
+                                    '<style>' +
+                                    '@page { size: A4 landscape; margin: 10mm; }' +
+                                    'h1 { text-align: center;  font-weight:bold;}' +
+                                    // Center the title
+                                    '</style>'
+                                );
+                            $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                        },
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
+                    },
+                    "colvis"
+                ]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+            // Initialize DataTable for #example2
+            $("#example2").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": [{
+                        extend: "copy",
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
+                    },
+                    {
+                        extend: "csv",
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
+                    },
+                    {
+                        extend: "excel",
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
+                    },
+                    {
+                        extend: "pdf",
+                        orientation: "landscape",
+                        pageSize: "A4",
+                        customize: function(doc) {
+                            doc.defaultStyle.fontSize = 8;
+                            doc.pageMargins = [10, 10, 10, 10];
+                        },
+                        exportOptions: {
+                            columns: ':not(:last-child)'
+                        }
+                    },
+                    {
+                        extend: "print",
+                        customize: function(win) {
+                            $(win.document.body)
+                                .css('font-size', '8pt')
+                                .prepend(
+                                    '<style>' +
+                                    '@page { size: A4 landscape; margin: 10mm; }' +
+                                    'h1 { text-align: center;  font-weight:bold;}' +
+                                    // Center the title
+                                    '</style>'
+                                );
+                            $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                        },
+                        exportOptions: {
+                            // columns: ':not(:last-child)'
+                        }
+                    },
+                    "colvis"
+                ]
+            }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+
 
 
 

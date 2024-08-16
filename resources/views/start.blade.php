@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
   <title>Selamat Datang di Sistem Informasi Desa Payungagung</title>
+  <link rel="shortcut icon" href="assets/img/mountain.png" type="image/x-icon">
 </head>
 <body>
 @include('sweetalert::alert') 

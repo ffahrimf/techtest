@@ -1,4 +1,6 @@
 @import '@fontsource/montserrat';
+@import '@fontsource/nunito';
+@import '@fontsource/poppins';
 
 @tailwind base;
 @tailwind components;

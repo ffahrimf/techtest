@@ -35,4 +35,9 @@ class Penduduk extends Model
         'ibu',
         'kepala_keluarga'
     ];
+
+    public function pekerjaan()
+    {
+        return $this->belongsTo(Pekerjaan::class, 'pekerjaan', 'id_pekerjaan','nama');
+    }
 }

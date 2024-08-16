@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Penduduk;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
-use Exception;
-use PDF;
 
 class JenisKelaminController extends Controller
 {
@@ -17,24 +14,38 @@ class JenisKelaminController extends Controller
     {
         $user = auth()->user();
 
-        return view('demografi.jeniskelamin.jeniskelamin');
+        if ($user->level == 'Admin') {
+            $penduduk = Penduduk::orderBy('nik', 'asc')->get();
+        } else {
+            $penduduk = Penduduk::where('dusun', $user->level)->orderBy('nik', 'asc')->get();
+        }
+
+        // Define the list of gender categories
+        $jenisKelaminCategories = ['Laki-laki', 'Perempuan'];
+
+        $jenisKelaminData = [];
+
+        foreach ($jenisKelaminCategories as $jenisKelamin) {
+            $total = $penduduk->where('jenis_kelamin', $jenisKelamin)->count();
+
+            $jumlahPercent = $total ? ($total / $penduduk->count()) * 100 : 0;
+
+            $jenisKelaminData[] = [
+                'jenis_kelamin' => $jenisKelamin,
+                'jumlah_n' => $total,
+                'jumlah_percent' => number_format($jumlahPercent, 2),
+            ];
+        }
+
+        // Calculate totals
+        $total_jumlah_n = array_sum(array_column($jenisKelaminData, 'jumlah_n'));
+        $total_jumlah_percent = $total_jumlah_n ? number_format(($total_jumlah_n / $penduduk->count()) * 100, 2) : 0;
+
+        return view('demografi.jeniskelamin.jeniskelamin', [
+            'penduduk' => $penduduk,
+            'jenisKelaminData' => $jenisKelaminData,
+            'total_jumlah_n' => $total_jumlah_n,
+            'total_jumlah_percent' => $total_jumlah_percent,
+        ]);
     }
-
-    public function show(Penduduk $penduduk)
-    {
-        //
-    }
-
-    public function printJenisKelamin()
-{
-    $penduduk = Penduduk::all();
-    $data = ['t_penduduk' => $penduduk];
-
-    $pdf = PDF::loadView('demografi.jeniskelamin.jeniskelamin-print', $data)
-              ->setPaper('a4', 'landscape');
-
-    return $pdf->stream('view-jeniskelamin.pdf');
-}
-
-
 }
