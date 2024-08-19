@@ -335,7 +335,7 @@
                                 </li>
                                 @if (auth()->user()->level == 'Admin')
                                     <li class="nav-item">
-                                        <a href="/jumlahrt" class="nav-link">
+                                        <a href="/luaswilayah" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>
                                                 Luas Wilayah

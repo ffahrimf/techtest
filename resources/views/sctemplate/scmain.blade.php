@@ -85,123 +85,21 @@
 
     <script>
         $(function() {
-            // Initialize DataTable for #example1
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": [{
-                        extend: "copy",
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    {
-                        extend: "csv",
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    {
-                        extend: "excel",
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    {
-                        extend: "pdf",
-                        orientation: "landscape",
-                        pageSize: "A4",
-                        customize: function(doc) {
-                            doc.defaultStyle.fontSize = 8;
-                            doc.pageMargins = [10, 10, 10, 10];
-                        },
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    {
-                        extend: "print",
-                        customize: function(win) {
-                            $(win.document.body)
-                                .css('font-size', '8pt')
-                                .prepend(
-                                    '<style>' +
-                                    '@page { size: A4 landscape; margin: 10mm; }' +
-                                    'h1 { text-align: center;  font-weight:bold;}' +
-                                    // Center the title
-                                    '</style>'
-                                );
-                            $(win.document.body).find('table')
-                                .addClass('compact')
-                                .css('font-size', 'inherit');
-                        },
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    "colvis"
-                ]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            var url = window.location;
+            // for single sidebar menu
+            $('ul.nav-sidebar a').filter(function() {
+                return this.href == url;
+            }).addClass('active');
 
-            // Initialize DataTable for #example2
-            $("#example2").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": [{
-                        extend: "copy",
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    {
-                        extend: "csv",
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    {
-                        extend: "excel",
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    {
-                        extend: "pdf",
-                        orientation: "landscape",
-                        pageSize: "A4",
-                        customize: function(doc) {
-                            doc.defaultStyle.fontSize = 8;
-                            doc.pageMargins = [10, 10, 10, 10];
-                        },
-                        exportOptions: {
-                            columns: ':not(:last-child)'
-                        }
-                    },
-                    {
-                        extend: "print",
-                        customize: function(win) {
-                            $(win.document.body)
-                                .css('font-size', '8pt')
-                                .prepend(
-                                    '<style>' +
-                                    '@page { size: A4 landscape; margin: 10mm; }' +
-                                    'h1 { text-align: center;  font-weight:bold;}' +
-                                    // Center the title
-                                    '</style>'
-                                );
-                            $(win.document.body).find('table')
-                                .addClass('compact')
-                                .css('font-size', 'inherit');
-                        },
-                        exportOptions: {
-                            // columns: ':not(:last-child)'
-                        }
-                    },
-                    "colvis"
-                ]
-            }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+            // for sidebar menu and treeview
+            $('ul.nav-treeview a').filter(function() {
+                    return this.href == url;
+                }).parentsUntil(".nav-sidebar > .nav-treeview")
+                .css({
+                    'display': 'block'
+                })
+                .addClass('menu-open').prev('a')
+                .addClass('active');
         });
     </script>
 

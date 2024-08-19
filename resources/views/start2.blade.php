@@ -43,8 +43,7 @@
                 <div class="flex items-center">
                     <a href="#" class="nav-link"><img src="/assets/img/mountain.png" class="h-7"
                             alt="" /></a>
-                    <a href="#"
-                        class="nav-link ml-3 text-xl text-gray-800 font-medium font-faktum">SI<b>PAGUNG</b></a>
+                    <a href="#" class="nav-link ml-3 text-xl text-gray-800 font-medium">SI<b>PAGUNG</b></a>
                 </div>
                 <button type="button"
                     class="flex md:hidden p-2 hover:cursor-pointer text-primary hover:text-primaryhover transition duration-200 ease-in-out"
@@ -58,8 +57,7 @@
                             <a href="#" class="nav-link">Beranda</a>
                         </li>
                         <li class="relative">
-                            <a 
-                                class="cursor-pointer nav-link md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out inline-flex items-center"
+                            <a class="cursor-pointer nav-link md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out inline-flex items-center"
                                 onclick="toggleDropdownProfil(event)">
                                 Profil
                                 <svg class="w-2.5 h-2.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -71,16 +69,18 @@
                             <ul id="dropdownMenuProfil"
                                 class="absolute left-0 hidden bg-white text-gray-800 py-2 mt-2 w-48 rounded-lg shadow-lg">
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="#" class="block px-4 py-2">Visi Misi Desa</a>
+                                    <a href="/showcase/profile/visi-misi" class="block px-4 py-2">Visi Misi Desa</a>
                                 </li>
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="#" class="block px-4 py-2">Sejarah Desa</a>
+                                    <a href="/showcase/profile/sejarah" class="block px-4 py-2">Sejarah Desa</a>
+                                </li>
+                                <li class="hover:bg-gray-100 hover:text-primary">
+                                    <a href="/showcase/profile/aparat" class="block px-4 py-2">Aparatur Desa</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="relative">
-                            <a 
-                                class="cursor-pointer nav-link md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out inline-flex items-center"
+                            <a class="cursor-pointer nav-link md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out inline-flex items-center"
                                 onclick="toggleDropdownDemo(event)">
                                 Demografi
                                 <svg class="w-2.5 h-2.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -92,30 +92,33 @@
                             <ul id="dropdownMenuDemo"
                                 class="absolute left-0 hidden bg-white text-gray-800 py-2 mt-2 w-48 rounded-lg shadow-lg">
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="/scpendidikan" class="block px-4 py-2">Pendidikan</a>
+                                    <a href="/#" class="block px-4 py-2">Wilayah Administratif</a>
                                 </li>
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="/scpekerjaan" class="block px-4 py-2">Pekerjaan</a>
+                                    <a href="/showcase/demografi/pendidikan" class="block px-4 py-2">Pendidikan</a>
                                 </li>
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="/scagama" class="block px-4 py-2">Agama</a>
+                                    <a href="/showcase/demografi/pekerjaan" class="block px-4 py-2">Pekerjaan</a>
                                 </li>
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="/scjeniskelamin" class="block px-4 py-2">Jenis Kelamin</a>
+                                    <a href="/showcase/demografi/agama" class="block px-4 py-2">Agama</a>
                                 </li>
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="/scumur" class="block px-4 py-2">Umur</a>
+                                    <a href="/showcase/demografi/jeniskelamin" class="block px-4 py-2">Jenis Kelamin</a>
                                 </li>
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="/scjumlahrt" class="block px-4 py-2">Luas Wilayah</a>
+                                    <a href="/showcase/demografi/umur" class="block px-4 py-2">Umur</a>
                                 </li>
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="/scdisabilitas" class="block px-4 py-2">Disabilitas</a>
+                                    <a href="/showcase/demografi/luaswilayah" class="block px-4 py-2">Luas Wilayah</a>
+                                </li>
+                                <li class="hover:bg-gray-100 hover:text-primary">
+                                    <a href="/showcase/demografi/disabilitas" class="block px-4 py-2">Disabilitas</a>
                                 </li>
                             </ul>
-                        </li><li class="relative">
-                            <a 
-                                class="cursor-pointer nav-link md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out inline-flex items-center"
+                        </li>
+                        <li class="relative">
+                            <a class="cursor-pointer nav-link md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out inline-flex items-center"
                                 onclick="toggleDropdownPotensi(event)">
                                 Potensi
                                 <svg class="w-2.5 h-2.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -127,12 +130,12 @@
                             <ul id="dropdownMenuPotensi"
                                 class="absolute left-0 hidden bg-white text-gray-800 py-2 mt-2 w-48 rounded-lg shadow-lg">
                                 <li class="hover:bg-gray-100 hover:text-primary">
-                                    <a href="#" class="block px-4 py-2">Lapak Desa</a>
+                                    <a href="/showcase/lapak" class="block px-4 py-2">Lapak Desa</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out">
-                            <a href="#projects" class="nav-link">Berita</a>
+                            <a href="/showcase/berita" class="">Berita</a>
                         </li>
                     </ul>
                 </div>
@@ -168,6 +171,8 @@
 
         </div>
     </section>
+
+
 
     {{-- <section>
         <div
@@ -732,11 +737,70 @@
         </div>
     </section>
 
+
+    <section class="container mx-auto py-10 mt-10 md:mt-20">
+        <div class="flex flex-col gap-10 md:gap-14">
+        <h1 class="text-center text-2xl md:text-5xl font-inter font-bold">
+            <span>Statistik </span><span><span class="text-primary">Desa
+                    {{-- </span> There!</span> --}}
+        </h1>
+        <div class="mx-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                <a href="" class="bg-card1 hover:bg-cardhover1 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
+                    <div class="flex flex-col md:grid md:grid-cols-2">
+                        <div class="flex items-center justify-center">
+                            <h3 class="text-5xl text-white font-semibold font-dmsans">{{ $penduduk }}</h3>
+                        </div>
+                        <div class="flex justify-center md:justify-start items-center">
+                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Populasi</h5>
+                        </div>
+                    </div>
+                   
+                </a>
+                <a href="" class="bg-card2 hover:bg-cardhover2 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
+                    <div class="flex flex-col md:grid md:grid-cols-2">
+                        <div class="flex items-center justify-center">
+                            <h3 class="text-5xl text-white font-semibold font-dmsans">{{$jumlahKeluarga}}</h3>
+                        </div>
+                        <div class="flex justify-center md:justify-start items-center">
+                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Keluarga</h5>
+                        </div>
+                    </div>
+                   
+                </a>
+                <a href="/showcase/demografi/pekerjaan" class="bg-card3 hover:bg-cardhover3 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
+                    <div class="flex flex-col md:grid md:grid-cols-2">
+                        <div class="flex items-center justify-center">
+                            <h3 class="text-5xl text-white font-semibold font-dmsans">{{$pekerjaanCount}}</h3>
+                        </div>
+                        <div class="flex justify-center md:justify-start items-center">
+                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Pekerjaan</h5>
+                        </div>
+                    </div>
+                    
+                </a>
+                <a href="/showcase/demografi/disabilitas" class="bg-card4 hover:bg-cardhover4 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
+                    <div class="flex flex-col md:grid md:grid-cols-2">
+                        <div class="flex items-center justify-center">
+                            <h3 class="text-5xl text-white font-semibold font-dmsans">{{$disabilitas}}</h3>
+                        </div>
+                        <div class="flex justify-center md:justify-start items-center">
+                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Disabilitas</h5>
+                        </div>
+                    </div>
+                   
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+
     <section class="container mx-auto py-10 md:py-20">
         <div id="contact" class="mx-10">
             <div class="flex justify-between items-center">
-                <h1 class="flex flex-col md:flex-row md:gap-4 text-2xl md:text-5xl font-faktum font-bold">
-                    <span>Let's </span><span><span class="text-primary">Connect</span> There!</span>
+                <h1 class="flex flex-col md:flex-row md:gap-4 text-2xl md:text-5xl font-inter  font-bold">
+                    <span>Maju, </span><span><span class="text-primary">Mandiri!
+                            {{-- </span> There!</span> --}}
                 </h1>
                 <div class="hidden md:flex bg-black rounded-full">
                     <div class="flex justify-between text-lg">
@@ -744,7 +808,7 @@
                             <i
                                 class="fa-solid fa-arrow-right bg-white rounded-full p-3 hover:bg-gray-100 transition duration-300 ease-in-out"></i>
                         </button>
-                        <button
+                        <button  onclick="window.location.href='https://wa.me/6285223303712';"
                             class="text-sm bg-primary rounded-full py-3 px-6 font-semibold hover:bg-primaryhover text-white transition duration-300 ease-in-out">
                             Hubungi Kami
                         </button>
@@ -759,31 +823,29 @@
                         <div class="flex items-center">
                             <a href="#"><img src="/assets/img/mountain.png" class="h-7"
                                     alt="" /></a>
-                            <a href="#" class="ml-3 text-xl text-gray-800 font-medium font-faktum">SI<b>PAGUNG</b></a>
+                            <a href="#"
+                                class="ml-3 text-xl text-gray-800 font-medium font-faktum">SI<b>PAGUNG</b></a>
                         </div>
                         <p class="text-sm md:text-base text-gray-500 font-dm-sans">
                             Website Resmi Pemerintah <br />Desa Payungagung, Kecamatan Panumbangan, Kabupaten Ciamis.
                         </p>
                         <div class="flex flex-row space-x-3">
-                            <a href="https://www.facebook.com/@ffahrimf" target="_blank">
+                            <a href="" target="_blank">
                                 <i
                                     class="fa-brands fa-square-facebook text-white p-4 rounded-full bg-primary hover:bg-primaryhover transition duration-300 ease-in-out"></i>
                             </a>
-                            <a href="https://www.instagram.com/ffahrimf" target="_blank">
+                            <a href="https://www.instagram.com/desa.payungagung" target="_blank">
                                 <i
                                     class="fa-brands fa-instagram text-white p-4 rounded-full bg-primary hover:bg-primaryhover transition duration-300 ease-in-out"></i>
                             </a>
-                            <a href="https://www.behance.net/29e93eb6" target="_blank">
-                                <i
-                                    class="fa-brands fa-behance text-white p-4 rounded-full bg-primary hover:bg-primaryhover transition duration-300 ease-in-out"></i>
-                            </a>
-                            <a href="https://www.youtube.com/channel/UC3I8Qu0Kf5hQQrzXMmyFasA" target="_blank">
+
+                            <a href="" target="_blank">
                                 <i
                                     class="fa-brands fa-youtube text-white p-4 rounded-full bg-primary hover:bg-primaryhover transition duration-300 ease-in-out"></i>
                             </a>
-                            <a href="https://linkedin.com/in/fahrimf" target="_blank">
+                            <a href="https://wa.me/6285223303712" target="_blank">
                                 <i
-                                    class="fa-brands fa-linkedin text-white p-4 rounded-full bg-primary hover:bg-primaryhover transition duration-300 ease-in-out"></i>
+                                    class="fa-brands fa-whatsapp text-white p-4 rounded-full bg-primary hover:bg-primaryhover transition duration-300 ease-in-out"></i>
                             </a>
                         </div>
                     </div>
@@ -794,12 +856,11 @@
                             Navigation
                         </h3>
                         <div class="flex flex-col gap-y-5">
-                            <h5 class="text-gray-500 text-xs md:text-sm">Home</h5>
-                            <h5 class="text-gray-500 text-xs md:text-sm">Services</h5>
-                            <h5 class="text-gray-500 text-xs md:text-sm">About</h5>
-                            <h5 class="text-gray-500 text-xs md:text-sm">Projects</h5>
-                            <h5 class="text-gray-500 text-xs md:text-sm">Blogs</h5>
-                            <h5 class="text-gray-500 text-xs md:text-sm">FAQs</h5>
+                            <a href="#" class="text-gray-500 text-xs md:text-sm">Beranda</a>
+                            <a href="#" class="text-gray-500 text-xs md:text-sm">Profil</a>
+                            <a href="#" class="text-gray-500 text-xs md:text-sm">Demografi</a>
+                            <a href="/showcase/lapak" class="text-gray-500 text-xs md:text-sm">Potensi</a>
+                            <a href="/showcase/berita" class="text-gray-500 text-xs md:text-sm">Berita</a>
                         </div>
                     </div>
                     <div>
@@ -845,11 +906,14 @@
                 class="flex flex-col md:flex-row md:justify-between text-center md:text-justify text-gray-800 font-dm-sans text-sm md:text-base">
                 <h5>
                     Copyright &copy;
-                    <a href="https://instagram.com/ffahrimf" target="_blank" class="text-primary">SI<b>PAGUNG</b></a>. All
+                    <a href="https://instagram.com/ffahrimf" target="_blank"
+                        class="text-primary">SI<b>PAGUNG</b></a>. All
                     Rights Reserved.
                 </h5>
                 <h5 class="hidden md:inline">
-                    User Terms & Conditions | Privacy Policy
+                    <a class="hover:text-primary transition duration-300 ease-in-out" href="">User Terms &
+                        Conditions</a> | <a class="hover:text-primary transition duration-300 ease-in-out"
+                        href="">Privacy Policy</a>
                 </h5>
             </div>
         </div>
@@ -905,35 +969,37 @@
         });
     </script>
 
-<script>
-  function toggleDropdownProfil(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      const dropdownMenu = document.getElementById('dropdownMenuProfil');
-      dropdownMenu.classList.toggle('hidden');
-  }
-  function toggleDropdownDemo(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      const dropdownMenu = document.getElementById('dropdownMenuDemo');
-      dropdownMenu.classList.toggle('hidden');
-  }
-  function toggleDropdownPotensi(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      const dropdownMenu = document.getElementById('dropdownMenuPotensi');
-      dropdownMenu.classList.toggle('hidden');
-  }
+    <script>
+        function toggleDropdownProfil(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdownMenu = document.getElementById('dropdownMenuProfil');
+            dropdownMenu.classList.toggle('hidden');
+        }
 
-  // Event listener to close the dropdown when clicking outside of it
-  document.addEventListener('click', function(event) {
-      const dropdownMenu = document.getElementById('dropdownMenu');
-      const dropdownToggle = event.target.closest('a.nav-link');
-      if (!dropdownToggle && !dropdownMenu.classList.contains('hidden')) {
-          dropdownMenu.classList.add('hidden');
-      }
-  });
-</script>
+        function toggleDropdownDemo(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdownMenu = document.getElementById('dropdownMenuDemo');
+            dropdownMenu.classList.toggle('hidden');
+        }
+
+        function toggleDropdownPotensi(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdownMenu = document.getElementById('dropdownMenuPotensi');
+            dropdownMenu.classList.toggle('hidden');
+        }
+
+        // Event listener to close the dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const dropdownToggle = event.target.closest('a.nav-link');
+            if (!dropdownToggle && !dropdownMenu.classList.contains('hidden')) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
 
 </body>
 

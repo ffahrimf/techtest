@@ -146,7 +146,7 @@
                                                     <option value="" disabled selected>Pilih RT</option>
                                                     @for ($i = 1; $i <= 8; $i++)
                                                         @php
-                                                            $rtValue = str_pad($i, 2, '0', STR_PAD_LEFT);
+                                                            $rtValue = str_pad($i, 3, '0', STR_PAD_LEFT);
                                                         @endphp
                                                         <option value="{{ $rtValue }}"
                                                             {{ old('rt') == $rtValue ? 'selected' : '' }}>
@@ -168,7 +168,7 @@
                                                     <option value="" disabled selected>Pilih RW</option>
                                                     @for ($i = 1; $i <= 8; $i++)
                                                         @php
-                                                            $rwValue = str_pad($i, 2, '0', STR_PAD_LEFT);
+                                                            $rwValue = str_pad($i, 3, '0', STR_PAD_LEFT);
                                                         @endphp
                                                         <option value="{{ $rwValue }}"
                                                             {{ old('rw') == $rwValue ? 'selected' : '' }}>
@@ -194,7 +194,7 @@
                                                         Pilih Dusun</option>
                                                     <option value="Pamekaran"
                                                         {{ old('dusun', auth()->user()->level) == 'Pamekaran' ? 'selected' : '' }}>
-                                                        Pamekaran</option>  
+                                                        Pamekaran</option>
                                                     <option value="Cimaja"
                                                         {{ old('dusun', auth()->user()->level) == 'Cimaja' ? 'selected' : '' }}>
                                                         Cimaja</option>
@@ -287,28 +287,45 @@
                                                     class="form-control @error('pendidikan') is-invalid @enderror"
                                                     id="pendidikan" required>
                                                     <option value="" disabled selected>Pilih Pendidikan</option>
-                                                    <option value="Tidak Sekolah"
-                                                        {{ old('pendidikan') == 'Tidak Sekolah' ? 'selected' : '' }}>Tidak
-                                                        Sekolah</option>
-                                                    <option value="SD"
-                                                        {{ old('pendidikan') == 'SD' ? 'selected' : '' }}>SD</option>
-                                                    <option value="SMP"
-                                                        {{ old('pendidikan') == 'SMP' ? 'selected' : '' }}>SMP</option>
-                                                    <option value="SMA"
-                                                        {{ old('pendidikan') == 'SMA' ? 'selected' : '' }}>SMA</option>
-                                                    <option value="D1"
-                                                        {{ old('pendidikan') == 'D1' ? 'selected' : '' }}>D1</option>
-                                                    <option value="D2"
-                                                        {{ old('pendidikan') == 'D2' ? 'selected' : '' }}>D2</option>
-                                                    <option value="D3"
-                                                        {{ old('pendidikan') == 'D3' ? 'selected' : '' }}>D3</option>
-                                                    <option value="S1"
-                                                        {{ old('pendidikan') == 'S1' ? 'selected' : '' }}>S1</option>
-                                                    <option value="S2"
-                                                        {{ old('pendidikan') == 'S2' ? 'selected' : '' }}>S2</option>
-                                                    <option value="S3"
-                                                        {{ old('pendidikan') == 'S3' ? 'selected' : '' }}>S3</option>
+                                                    <option value="Tidak/Belum Sekolah"
+                                                        {{ old('pendidikan') == 'Tidak/Belum Sekolah' ? 'selected' : '' }}>
+                                                        Tidak/Belum Sekolah</option>
+                                                    <option value="Tidak Tamat SD/Sederajat"
+                                                        {{ old('pendidikan') == 'Tidak Tamat SD/Sederajat' ? 'selected' : '' }}>
+                                                        Tidak Tamat SD/Sederajat</option>
+                                                    <option value="Tamat SD/Sederajat"
+                                                        {{ old('pendidikan') == 'Tamat SD/Sederajat' ? 'selected' : '' }}>
+                                                        Tamat SD/Sederajat</option>
+                                                    <option value="SLTP/Sederajat"
+                                                        {{ old('pendidikan') == 'SLTP/Sederajat' ? 'selected' : '' }}>
+                                                        SLTP/Sederajat</option>
+                                                    <option value="SLTA/Sederajat"
+                                                        {{ old('pendidikan') == 'SLTA/Sederajat' ? 'selected' : '' }}>
+                                                        SLTA/Sederajat</option>
+                                                    <option value="Akademi/Diploma III/S. Muda"
+                                                        {{ old('pendidikan') == 'Akademi/Diploma III/S. Muda' ? 'selected' : '' }}>
+                                                        Akademi/Diploma III/S. Muda</option>
+                                                    <option value="Diploma I/II"
+                                                        {{ old('pendidikan') == 'Diploma I/II' ? 'selected' : '' }}>Diploma
+                                                        I/II</option>
+                                                    <option value="Diploma IV/Strata I"
+                                                        {{ old('pendidikan') == 'Diploma IV/Strata I' ? 'selected' : '' }}>
+                                                        Diploma IV/Strata I</option>
+                                                    <option value="Strata II"
+                                                        {{ old('pendidikan') == 'Strata II' ? 'selected' : '' }}>Strata II
+                                                    </option>
+                                                    <option value="Strata III"
+                                                        {{ old('pendidikan') == 'Strata III' ? 'selected' : '' }}>Strata
+                                                        III</option>
+                                                    <option value="Pendidikan Non-Formal"
+                                                        {{ old('pendidikan') == 'Pendidikan Non-Formal' ? 'selected' : '' }}>
+                                                        Pendidikan Non-Formal</option>
+                                                    <option value="Pendidikan Khusus"
+                                                        {{ old('pendidikan') == 'Pendidikan Khusus' ? 'selected' : '' }}>
+                                                        Pendidikan Khusus</option>
                                                 </select>
+
+
                                                 @error('pendidikan')
                                                     <span class="invalid-feedback text-danger">{{ $message }}</span>
                                                 @enderror
@@ -319,10 +336,11 @@
                                             <div class="form-group">
                                                 <label for="pekerjaan">Pekerjaan</label>
                                                 <select name="pekerjaan" id="pekerjaan"
-                                                        class="form-control @error('pekerjaan') is-invalid @enderror" required>
+                                                    class="form-control @error('pekerjaan') is-invalid @enderror"
+                                                    required>
                                                     <option value="">Pilih Pekerjaan</option>
-                                                    @foreach($pekerjaanList as $item)
-                                                        <option value="{{ $item->nama }}" 
+                                                    @foreach ($pekerjaanList as $item)
+                                                        <option value="{{ $item->nama }}"
                                                             {{ old('pekerjaan', isset($pekerjaan) ? $pekerjaan->nama : '') == $item->nama ? 'selected' : '' }}>
                                                             {{ $item->nama }}
                                                         </option>
@@ -333,7 +351,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        
+
                                     </div>
 
 
@@ -366,13 +384,24 @@
                                                     class="form-control @error('shdk') is-invalid @enderror"
                                                     id="shdk" required>
                                                     <option value="">Pilih Status</option>
-                                                    <option value="Ayah" {{ old('shdk') == 'Ayah' ? 'selected' : '' }}>
-                                                        Ayah</option>
-                                                    <option value="Ibu" {{ old('shdk') == 'Ibu' ? 'selected' : '' }}>
-                                                        Ibu</option>
                                                     <option value="Anak" {{ old('shdk') == 'Anak' ? 'selected' : '' }}>
                                                         Anak</option>
+                                                    <option value="Cucu" {{ old('shdk') == 'Cucu' ? 'selected' : '' }}>
+                                                        Cucu</option>
+                                                    <option value="Famili Lain"
+                                                        {{ old('shdk') == 'Famili Lain' ? 'selected' : '' }}>Famili Lain
+                                                    </option>
+                                                    <option value="Istri" {{ old('shdk') == 'Istri' ? 'selected' : '' }}>
+                                                        Istri</option>
+                                                    <option value="Kepala Keluarga"
+                                                        {{ old('shdk') == 'Kepala Keluarga' ? 'selected' : '' }}>Kepala
+                                                        Keluarga</option>
+                                                    <option value="Lainnya"
+                                                        {{ old('shdk') == 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
+                                                    <option value="Orangtua"
+                                                        {{ old('shdk') == 'Orangtua' ? 'selected' : '' }}>Orangtua</option>
                                                 </select>
+
                                                 @error('shdk')
                                                     <span class="invalid-feedback text-danger">{{ $message }}</span>
                                                 @enderror

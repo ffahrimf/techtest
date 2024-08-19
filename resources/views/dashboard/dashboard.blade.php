@@ -31,10 +31,10 @@
           <div class="small-box bg-info">
             <div class="inner">
               <h3>{{ $penduduk }}</h3>
-              <p>Penduduk</p>
+              <p class="font-weight-bold">Penduduk</p>
             </div>
             <div class="icon">
-              <i class="fa-solid fa-users"></i>
+              <i class="fa-solid fa-user-large "></i>
             </div>
             <a href="/penduduk" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -69,11 +69,11 @@
           <!-- small box -->
           <div class="small-box bg-gray">
             <div class="inner">
-              <h3>{{ $pekerjaanCount }}</h3>
-              <p class="font-weight-bold">Pekerjaan</p>
+              <h3>{{ $jumlahKeluarga }}</h3>
+              <p class="font-weight-bold">Keluarga</p>
             </div>
             <div class="icon">
-              <i class="fa-solid fa-briefcase"></i>
+              <i class="fa-solid fa-people-roof"></i>
             </div>
             <a href="/pekerjaan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -143,6 +143,8 @@
       </div>
       <!-- /.row -->
     </div><!-- /.container-fluid -->
+
+    
   </div>
   <!-- /.content -->
 </div>

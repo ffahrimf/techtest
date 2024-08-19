@@ -23,9 +23,20 @@ class PendidikanController extends Controller
             $penduduk = Penduduk::where('dusun', $user->level)->orderBy('nik', 'asc')->get();
         }
 
-        // Calculate statistics
+        // Updated list of education categories
         $pendidikanCategories = [
-            'Tidak Sekolah', 'SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'
+            'Tidak/Belum Sekolah', 
+            'Tidak Tamat SD/Sederajat', 
+            'Tamat SD/Sederajat', 
+            'SLTP/Sederajat', 
+            'SLTA/Sederajat', 
+            'Akademi/Diploma III/S. Muda', 
+            'Diploma I/II', 
+            'Diploma IV/Strata I', 
+            'Strata II', 
+            'Strata III', 
+            'Pendidikan Non-Formal', 
+            'Pendidikan Khusus'
         ];
 
         $pendidikanData = [];
