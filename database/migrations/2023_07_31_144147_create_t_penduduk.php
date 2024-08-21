@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('agama', 20);
             $table->string('status_perkawinan', 20);
             $table->string('pendidikan', 50);
-            $table->string('pekerjaan', 20);
+            $table->string('pekerjaan', 40);
             $table->string('golongan_darah', 20);
             $table->string('shdk', 20);
             $table->string('ayah', 50);

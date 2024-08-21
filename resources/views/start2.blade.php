@@ -142,7 +142,7 @@
                 <div class="hidden md:block">
                     <a class="text-sm hidden md:block bg-primary hover:bg-primaryhover py-3 px-7 text-white rounded-full font-semibold font-dm-sans hover:cursor-pointer transition duration-300 ease-in-out"
                         href="/login">
-                        Sign In
+                        Masuk
                     </a>
                 </div>
             </div>
@@ -150,18 +150,18 @@
     </nav>
 
 
-    <section class="container mx-auto shadow-2xl "
+    <section class=" container mx-auto shadow-2xl"
         style="
         background-image: url(./assets/img/sawah2.jpg);
         background-size: cover;
       ">
 
-        <div class="flex justify-center items-center  h-screen">
+        <div class="flex justify-center items-center h-96 md:h-screen">
             <div class="text-center text-2xl md:text-6xl">
 
-                <h1 class="font-poppins text-white font-bold  mb-4">
+                <p class="font-poppins text-white font-bold md:mb-4 leadi">
                     Sistem<span class="text-primary"> Informasi</span>
-                </h1>
+                </p>
                 <h1 class="font-poppins font-bold text-white ">
                     Desa Payungagung
                 </h1>
@@ -738,61 +738,215 @@
     </section>
 
 
-    <section class="container mx-auto py-10 mt-10 md:mt-20">
-        <div class="flex flex-col gap-10 md:gap-14">
-        <h1 class="text-center text-2xl md:text-5xl font-inter font-bold">
-            <span>Statistik </span><span><span class="text-primary">Desa
-                    {{-- </span> There!</span> --}}
-        </h1>
-        <div class="mx-10">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-                <a href="" class="bg-card1 hover:bg-cardhover1 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
-                    <div class="flex flex-col md:grid md:grid-cols-2">
-                        <div class="flex items-center justify-center">
-                            <h3 class="text-5xl text-white font-semibold font-dmsans">{{ $penduduk }}</h3>
-                        </div>
-                        <div class="flex justify-center md:justify-start items-center">
-                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Populasi</h5>
-                        </div>
+    <section class="container mx-auto py-10 mt-10 md:mt-20 space-y-14">
+        <div class="flex flex-col md:flex-row mx-10 gap-7 items-center">
+            <!-- Carousel -->
+            <div
+                class="w-full md:w-7/12 relative overflow-hidden md:h-80 rounded-2xl border border-gray-200 shadow-lg">
+                <div class="carousel-wrapper flex transition-transform duration-500 ease-in-out">
+                    <img src="./assets/img/sawah2.jpg" alt="" class="object-cover w-full h-[inherit]">
+                    <img src="./assets/img/pedesaan.jpg" alt="" class="object-cover w-full h-[inherit]">
+                    <img src="./assets/img/sawah2.jpg" alt="" class="object-cover w-full h-[inherit]">
+                </div>
+            </div>
+            <!-- Input Form -->
+            <div class="w-full md:w-5/12">
+                <div class="bg-white border border-gray-200 shadow-lg rounded-2xl px-10 py-6 text-center space-y-5">
+                    <h2 class="font-base font-bold">Layanan Mandiri</h2>
+                    <hr class="border-t-[1px] border-gray-300 mt-14 mb-14" />
+                    <div class="flex items-center bg-gray-100 border-l-4 border-primary px-4 py-2">
+                        <svg class="h-6 w-6 text-primary mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-gray-700 text-xs">Hubungi Operator Desa untuk memperoleh PIN</span>
                     </div>
-                   
-                </a>
-                <a href="" class="bg-card2 hover:bg-cardhover2 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
-                    <div class="flex flex-col md:grid md:grid-cols-2">
-                        <div class="flex items-center justify-center">
-                            <h3 class="text-5xl text-white font-semibold font-dmsans">{{$jumlahKeluarga}}</h3>
+                    <form class="" novalidate action="/login" method="POST">
+                        @csrf
+                        <div class="space-y-3">
+
+                            <input type="text" name="email"
+                                class="w-full border border-gray-200 rounded-lg px-5 py-2"
+                                placeholder="Nomor Induk Kependudukan" />
+                            <input type="password" name="password"
+                                class="w-full border border-gray-200 rounded-lg px-5 py-2" placeholder="Kode Pin" />
+                            <button
+                                class="w-full bg-primary hover:bg-primaryhover transition ease-in-out duration-300 text-white text-sm font-dm-sans py-2 px-5 rounded-lg">
+                                Masuk
+                            </button>
                         </div>
-                        <div class="flex justify-center md:justify-start items-center">
-                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Keluarga</h5>
-                        </div>
-                    </div>
-                   
-                </a>
-                <a href="/showcase/demografi/pekerjaan" class="bg-card3 hover:bg-cardhover3 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
-                    <div class="flex flex-col md:grid md:grid-cols-2">
-                        <div class="flex items-center justify-center">
-                            <h3 class="text-5xl text-white font-semibold font-dmsans">{{$pekerjaanCount}}</h3>
-                        </div>
-                        <div class="flex justify-center md:justify-start items-center">
-                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Pekerjaan</h5>
-                        </div>
-                    </div>
-                    
-                </a>
-                <a href="/showcase/demografi/disabilitas" class="bg-card4 hover:bg-cardhover4 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
-                    <div class="flex flex-col md:grid md:grid-cols-2">
-                        <div class="flex items-center justify-center">
-                            <h3 class="text-5xl text-white font-semibold font-dmsans">{{$disabilitas}}</h3>
-                        </div>
-                        <div class="flex justify-center md:justify-start items-center">
-                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Disabilitas</h5>
-                        </div>
-                    </div>
-                   
-                </a>
+                    </form>
+                </div>
             </div>
         </div>
+        <div class="flex flex-col md:flex-row mx-10 gap-7 items-end">
+            <div class="w-full md:w-7/12 ">
+                <div class="flex flex-col gap-10 md:gap-14">
+                    <h1 class="text-center text-2xl md:text-5xl font-inter font-bold">
+                        <span>Statistik </span><span><span class="text-primary">Desa
+                                {{-- </span> There!</span> --}}
+                    </h1>
+                    <div class="">
+                        <div class="grid grid-rows-2 gap-5">
+                            <div class="grid grid-cols-2 md:grid-cols-2 gap-5">
+                                <a href=""
+                                    class="flex justify-center items-center bg-card1 hover:bg-cardhover1 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
+                                    <div class="flex flex-col md:grid md:grid-cols-2">
+                                        <div class="flex items-center justify-center">
+                                            <h3 class="text-2xl md:text-5xl text-white font-semibold font-dmsans">
+                                                {{ $penduduk }}</h3>
+                                        </div>
+                                        <div class="flex justify-center md:justify-center items-center">
+                                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Populasi
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                </a>
+                                <a href=""
+                                    class="flex justify-center items-center bg-card2 hover:bg-cardhover2 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 py-5 md:py-8 px-4 rounded-2xl">
+                                    <div class="flex flex-col md:grid md:grid-cols-2">
+                                        <div class="flex items-center justify-center">
+                                            <h3 class="text-2xl md:text-5xl text-white font-semibold font-dmsans">
+                                                {{ $jumlahKeluarga }}
+                                            </h3>
+                                        </div>
+                                        <div class="flex justify-center md:justify-center items-center">
+                                            <h5 class="text-white font-medium font-dmsans text-lg md:text-xl">Keluarga
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <a href="/showcase/demografi/pekerjaan"
+                                class="bg-card3 hover:bg-cardhover3 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-105 py-5 md:py-8 px-4 rounded-2xl">
+                               
+                                <div class="flex flex-col md:grid md:grid-cols-12">
+                                    <div class="flex items-center justify-center  md:col-start-1 md:col-span-4">
+                                        <h3 class="text-3xl md:text-5xl text-white font-semibold font-dmsans">
+                                            {{ $mostCommonJobCount  }}
+                                        </h3>
+                                    </div>
+                                    <div
+                                        class="flex justify-center md:justify-center items-center md:col-start-5 md:col-span-8 ">
+                                        <h5
+                                            class="text-white font-medium font-dmsans text-md md:text-xl text-center md:text-left">
+                                            Warga <span class="hidden md:inline">Desa Payungagung</span> bermata
+                                            pencaharian sebagai<strong> {{$mostCommonJobName }}</strong>.
+                                        </h5>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div href="" class="w-full md:w-5/12 relative overflow-hidden rounded-2xl">
+                <img src="./assets/img/workshop-umkm.jpeg" alt=""
+                    class="object-cover w-full h-[inherit] brightness-75 transition-transform duration-[2000ms] transform hover:scale-110 border border-gray-200 shadow-lg">
+
+                <!-- Text Overlay -->
+                <div class="absolute bottom-0 left-0 w-full p-6 bg-transparent text-white font-poppins">
+                    <a href="/showcase/berita">
+                        <h3 class="text-xl md:text-2xl font-semibold">Workshop UMKM:</h3>
+                        <p class="text-sm md:text-lg">Digital Marketing, Legalitas <span class="hidden md:inline">Produk...</span></p>
+                    </a>
+                    <div class="flex items-center mt-3 text-xs md:text-sm text-white">
+                        <div class="flex items-center mr-4">
+                            <i class="fa-solid fa-calendar-check mr-1"></i>
+                            <span>August 12, 2024</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-comment mr-1 "></i>
+                            <span>0 Comment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <div class="mx-10 md:py-8">
+        <div class="container mx-auto">
+            <h1 class="text-center text-2xl md:text-5xl font-inter font-bold">
+                <span>Aparatur </span><span><span class="text-primary">Desa</span></span>
+            </h1>
+            <div class="relative overflow-x-auto py-8 scroll-container font-dmsans">
+                <div class="flex space-x-8 md:px-5">
+                    <!-- Aparatur Item -->
+                    <div class="relative w-56 flex-shrink-0">
+                        <img src="./assets/img/jokowi.jpg" alt="Foto Aparatur" class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-transparent bg-opacity-50 text-white p-4 text-center">
+                            <h3 class="text-xl font-semibold">Nama Aparatur</h3>
+                            <p>Kepala Desa</p>
+                        </div>
+                    </div>
+                    <!-- Aparatur Item -->
+                    <div class="relative w-56 flex-shrink-0">
+                        <img src="./assets/img/jokowi.jpg" alt="Foto Aparatur" class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-transparent bg-opacity-50 text-white p-4 text-center">
+                            <h3 class="text-xl font-semibold">Nama Aparatur</h3>
+                            <p>Sekretaris</p>
+                        </div>
+                    </div>
+                    <!-- Aparatur Item -->
+                    <div class="relative w-56 flex-shrink-0">
+                        <img src="./assets/img/jokowi.jpg" alt="Foto Aparatur" class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-transparent bg-opacity-50 text-white p-4 text-center">
+                            <h3 class="text-xl font-semibold">Nama Aparatur</h3>
+                            <p>Bendahara</p>
+                        </div>
+                    </div>
+                    <!-- Aparatur Item -->
+                    <div class="relative w-56 flex-shrink-0">
+                        <img src="./assets/img/jokowi.jpg" alt="Foto Aparatur" class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-transparent bg-opacity-50 text-white p-4 text-center">
+                            <h3 class="text-xl font-semibold">Nama Aparatur</h3>
+                            <p>Jabatan</p>
+                        </div>
+                    </div>
+                    <!-- Aparatur Item -->
+                    <div class="relative w-56 flex-shrink-0">
+                        <img src="./assets/img/jokowi.jpg" alt="Foto Aparatur" class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-transparent bg-opacity-50 text-white p-4 text-center">
+                            <h3 class="text-xl font-semibold">Nama Aparatur</h3>
+                            <p>Jabatan</p>
+                        </div>
+                    </div>
+                    <!-- Aparatur Item -->
+                    <div class="relative w-56 flex-shrink-0">
+                        <img src="./assets/img/jokowi.jpg" alt="Foto Aparatur" class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-transparent bg-opacity-50 text-white p-4 text-center">
+                            <h3 class="text-xl font-semibold">Nama Aparatur</h3>
+                            <p>Jabatan</p>
+                        </div>
+                    </div>
+                    <!-- Aparatur Item -->
+                    <div class="relative w-56 flex-shrink-0">
+                        <img src="./assets/img/jokowi.jpg" alt="Foto Aparatur" class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-transparent bg-opacity-50 text-white p-4 text-center">
+                            <h3 class="text-xl font-semibold">Nama Aparatur</h3>
+                            <p>Jabatan</p>
+                        </div>
+                    </div>
+                    <!-- Aparatur Item -->
+                    <div class="relative w-56 flex-shrink-0">
+                        <img src="./assets/img/jokowi.jpg" alt="Foto Aparatur" class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-transparent bg-opacity-50 text-white p-4 text-center">
+                            <h3 class="text-xl font-semibold">Nama Aparatur</h3>
+                            <p>Jabatan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     </section>
 
     <section class="container mx-auto py-10 md:py-20">
@@ -808,7 +962,7 @@
                             <i
                                 class="fa-solid fa-arrow-right bg-white rounded-full p-3 hover:bg-gray-100 transition duration-300 ease-in-out"></i>
                         </button>
-                        <button  onclick="window.location.href='https://wa.me/6285223303712';"
+                        <button onclick="window.location.href='https://wa.me/6285223303712';"
                             class="text-sm bg-primary rounded-full py-3 px-6 font-semibold hover:bg-primaryhover text-white transition duration-300 ease-in-out">
                             Hubungi Kami
                         </button>
@@ -872,13 +1026,13 @@
                                 +62-8522-3024-909
                             </h5>
                             <h5 class="text-gray-500 text-xs md:text-sm">
-                                www.example.com
+                                www.deninuriman.com
                             </h5>
                             <h5 class="text-gray-500 text-xs md:text-sm">
-                                example@gmail.com
+                                deninuriman@gmail.com
                             </h5>
                             <h5 class="text-gray-500 text-xs md:text-sm">
-                                21 Sudirman Street,<br />Jakarta 42312
+                                69 Deni Nuriman,<br />Half Town 42312
                             </h5>
                             <h5 class="text-gray-500 text-xs md:text-sm">Blogs</h5>
                             <h5 class="text-gray-500 text-xs md:text-sm">FAQs</h5>
@@ -999,6 +1153,17 @@
                 dropdownMenu.classList.add('hidden');
             }
         });
+    </script>
+
+    <script>
+        // JavaScript to automatically switch the carousel images
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % 3;
+            carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, 5000); // Change image every 3 seconds
     </script>
 
 </body>
