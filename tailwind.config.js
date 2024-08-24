@@ -4,7 +4,7 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
-        "./node_modules/flowbite/**/*.js"
+        "./node_modules/flowbite/**/*.js",
     ],
     theme: {
         fontFamily: {
@@ -13,6 +13,13 @@ export default {
             poppins: ["Poppins", "sans-serif"],
             dmsans: ["DM Sans", "sans-serif"],
             inter: ["Inter", "sans-serif"],
+
+            nhaasrg: ["NHaasGroteskRG", "sans-serif"],
+            nhaasmd: ["NHaasGroteskMD", "sans-serif"],
+            nhaasbd: ["NHaasGroteskBD", "sans-serif"],
+
+'akira-expanded-demo': ["Akira-Expanded-Demo", "sans-serif"],
+
         },
         extend: {
             colors: {
@@ -33,26 +40,22 @@ export default {
                 warning: "#ffd827",
                 // primary: "#0677ba",
 
-				primary: '#0d9488',
-				secondary: '#facc15',
-				primaryhover: '#0f766e',
-				secondaryhover: '#6F984B',
-                
-				card1: '#0c8b80',
-				card2: '#0d9488',
-				card3: '#0e9d90',
-				card4: '#0fa697',
-                
-				cardhover1: '#0a756c',
-				cardhover2: '#0b7c71',
-				cardhover3: '#0c877b',
-				cardhover4: '#0d8f82',
+                primary: "#0d9488",
+                secondary: "#facc15",
+                primaryhover: "#0f766e",
+                secondaryhover: "#6F984B",
 
-                
+                card1: "#0c8b80",
+                card2: "#0d9488",
+                card3: "#0e9d90",
+                card4: "#0fa697",
+
+                cardhover1: "#0a756c",
+                cardhover2: "#0b7c71",
+                cardhover3: "#0c877b",
+                cardhover4: "#0d8f82",
             },
         },
     },
-    plugins: [
-        require('flowbite/plugin')
-    ],
+    plugins: [require("flowbite/plugin")],
 };
