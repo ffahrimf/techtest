@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
     <link rel="shortcut icon" href="assets/img/mountain.png" type="image/x-icon">
 
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 
@@ -201,7 +201,7 @@
 
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="assets/dist/img/boy.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/dashboard" class="d-block">{{ auth()->user()->name }}</a>
@@ -246,6 +246,49 @@
 
                         @if (auth()->user()->level == 'Admin')
                             <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-sitemap"></i>
+                                    <p>
+                                        Informasi
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/admin/visi-misi" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Visi Misi</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/admin/sejarah" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Sejarah</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/admin/lapakdesa" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Lapak Desa</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/admin/berita" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Berita Desa</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        
+                            <li class="nav-item">
                                 <a href="/users" class="nav-link">
                                     <i class="nav-icon fa-solid fa-key"></i>
                                     <p>
@@ -253,7 +296,16 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/penduduk" class="nav-link">
+                                    <i class="nav-icon fa-solid fa-user"></i>
+                                    <p>
+                                        Data Penduduk
+                                    </p>
+                                </a>
+                            </li>
                         @endif
+
 
 
                         <li class="nav-item">
@@ -272,17 +324,17 @@
                                             <p>Pekerjaan</p>
                                         </a>
                                     </li>
-                                    
+
                                 </ul>
                             @endif
-                            <ul class="nav nav-treeview">
+                            {{-- <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/penduduk" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Penduduk</p>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/mdisabilitas" class="nav-link">
@@ -302,7 +354,7 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                
+
                                 <li class="nav-item">
                                     <a href="/pendidikan" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>

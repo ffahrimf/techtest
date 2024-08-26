@@ -1,5 +1,5 @@
 @extends('sctemplate.scmain')
-@section('title', 'Pekerjaan')
+@section('title', 'Agama')
 @section('content')
 
     <!-- Main content -->

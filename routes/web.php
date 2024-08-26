@@ -17,9 +17,10 @@ use App\Http\Controllers\{
     MasterDisabilitasController,
 };
 
-use App\Http\Controllers\showcase\{LapakController,BeritaController};
+use App\Http\Controllers\showcase\{LapakController, BeritaController};
+use App\Http\Controllers\Admin\{AdmVisiMisiController,AdmBeritaController,AdmSejarahController,AdmLapakController};
 use App\Http\Controllers\showcase\demografi\{SCPendidikanController, SCPekerjaanController, SCAgamaController, SCJenisKelaminController, SCUmurController, SCLuasWilayahController, SCDisabilitasController};
-use App\Http\Controllers\showcase\profile\{SejarahController,VisiMisiController, AparatController};
+use App\Http\Controllers\showcase\profile\{SejarahController, VisiMisiController, AparatController};
 use Illuminate\Support\Facades\Route;
 
 
@@ -93,4 +94,9 @@ Route::middleware(['auth', 'cek.level:Admin,Pamekaran,Limusagung,Nanggeleng,Dara
 Route::middleware(['auth', 'cek.level:Admin'])->group(function () {
     Route::resource('/users', UserController::class);
     Route::resource('/mpekerjaan', MasterPekerjaanController::class);
+
+    Route::resource('/admin/visi-misi', AdmVisiMisiController::class);
+    Route::resource('/admin/sejarah', AdmSejarahController::class);
+    Route::resource('/admin/lapakdesa', AdmLapakController::class);
+    Route::resource('/admin/berita', AdmBeritaController::class);
 });

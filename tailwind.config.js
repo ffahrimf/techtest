@@ -13,13 +13,6 @@ export default {
             poppins: ["Poppins", "sans-serif"],
             dmsans: ["DM Sans", "sans-serif"],
             inter: ["Inter", "sans-serif"],
-
-            nhaasrg: ["NHaasGroteskRG", "sans-serif"],
-            nhaasmd: ["NHaasGroteskMD", "sans-serif"],
-            nhaasbd: ["NHaasGroteskBD", "sans-serif"],
-
-'akira-expanded-demo': ["Akira-Expanded-Demo", "sans-serif"],
-
         },
         extend: {
             colors: {
