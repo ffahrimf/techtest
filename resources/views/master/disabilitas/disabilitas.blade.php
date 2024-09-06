@@ -30,10 +30,9 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <div class="text-right">
+                                <div class="text-right py-1">
                                     <a href="/mdisabilitas/create"
-                                        class="text-white bg-teal-600 rounded-lg px-3 py-2 hover:bg-teal-700 transition font-medium duration-300 ease-in-out">Tambah
-                                        Warga Disabilitas</a>
+                                        class="text-white bg-teal-600 rounded-lg px-3 py-2 hover:bg-teal-700 transition font-medium duration-300 ease-in-out">Tambah <span class="hidden md:inline">Warga Disabilitas</span></a>
                                 </div>
                             </div>
                             <!-- /.card-header -->

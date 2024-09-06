@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Penduduk, Disabilitas,Sejarah};
+use App\Models\{Penduduk, Disabilitas,Sejarah,Lapakdesa,Berita};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +34,8 @@ class StartController extends Controller
         $mostCommonJobName = $mostCommonJob ? $mostCommonJob->pekerjaan : 'Tidak Diketahui';
         $mostCommonJobCount = $mostCommonJob ? $mostCommonJob->jumlah : 0;
 
-
+        $lapakdesas = Lapakdesa::all();
+        $beritaTerbaru = Berita::orderBy('tanggal', 'desc')->first();
 
         return view('start', [
             'penduduk' => $penduduk,
@@ -43,6 +44,8 @@ class StartController extends Controller
             'jumlahKeluarga' => $jumlahKeluarga,
             'mostCommonJobName' => $mostCommonJobName, // Tambahkan nama pekerjaan terbanyak
             'mostCommonJobCount' => $mostCommonJobCount, // Tambahkan jumlah pekerjaan terbanyak
+            'lapakdesas' => $lapakdesas,
+            'beritaTerbaru' => $beritaTerbaru,
             
         ]);
     }

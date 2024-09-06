@@ -25,6 +25,22 @@
 
 </head>
 
+<style>
+    @layer utilities {
+        @media (max-width: 768px) {
+            .pagination .page-item {
+                display: none;
+            }
+
+            .pagination .page-item:first-child,
+            .pagination .page-item:last-child,
+            .pagination .page-item:nth-child(-n+6):not(:first-child):not(:last-child) {
+                display: inline-block;
+            }
+        }
+    }
+</style>
+
 <body class="hold-transition sidebar-mini">
 
     @include('sweetalert::alert')
@@ -287,7 +303,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        
+
                             <li class="nav-item">
                                 <a href="/users" class="nav-link">
                                     <i class="nav-icon fa-solid fa-key"></i>
@@ -296,15 +312,15 @@
                                     </p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="/penduduk" class="nav-link">
-                                    <i class="nav-icon fa-solid fa-user"></i>
-                                    <p>
-                                        Data Penduduk
-                                    </p>
-                                </a>
-                            </li>
                         @endif
+                        <li class="nav-item">
+                            <a href="/penduduk" class="nav-link">
+                                <i class="nav-icon fa-solid fa-user"></i>
+                                <p>
+                                    Data Penduduk
+                                </p>
+                            </a>
+                        </li>
 
 
 
@@ -627,6 +643,69 @@
                     "colvis"
                 ]
             }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+
+
+            $("#example3").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "paging": false, // Menonaktifkan paging
+                "ordering": false, // Menonaktifkan sorting
+                "info": false, // Menonaktifkan info jumlah data
+                "searching": true, // Menonaktifkan pencarian
+                "buttons": [{
+                        extend: "copy",
+                        exportOptions: {
+                            columns: ':not(:last-child)' // Tidak termasuk kolom aksi
+                        }
+                    },
+                    {
+                        extend: "csv",
+                        exportOptions: {
+                            columns: ':not(:last-child)' // Tidak termasuk kolom aksi
+                        }
+                    },
+                    {
+                        extend: "excel",
+                        exportOptions: {
+                            columns: ':not(:last-child)' // Tidak termasuk kolom aksi
+                        }
+                    },
+                    {
+                        extend: "pdf",
+                        orientation: "landscape",
+                        pageSize: "A4",
+                        customize: function(doc) {
+                            doc.defaultStyle.fontSize = 8;
+                            doc.pageMargins = [10, 10, 10, 10];
+                        },
+                        exportOptions: {
+                            columns: ':not(:last-child)' // Tidak termasuk kolom aksi
+                        }
+                    },
+                    {
+                        extend: "print",
+                        customize: function(win) {
+                            $(win.document.body)
+                                .css('font-size', '8pt')
+                                .prepend(
+                                    '<style>' +
+                                    '@page { size: A4 landscape; margin: 10mm; }' +
+                                    'h1 { text-align: center;  font-weight:bold;}' +
+                                    '</style>'
+                                );
+                            $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                        },
+                        exportOptions: {
+                            columns: ':not(:last-child)' // Tidak termasuk kolom aksi
+                        }
+                    },
+                    "colvis"
+                ]
+            }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
+
         });
     </script>
 

@@ -2,7 +2,7 @@
 @section('title', 'Berita Desa')
 @section('content')
 
-    <div class="flex flex-col gap-3 md:px-20 px-10">
+    <div class="flex flex-col gap-3 md:px-20 px-5">
         <div class="flex flex-col gap-7">
             <div class="flex flex-col gap-4 bg-white border border-gray-200 shadow-lg rounded-lg p-4 mt-32">
                 <div class="flex flex-row items-center gap-2">

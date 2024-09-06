@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Main content -->
-    <section class="content mt-28 px-20">
+    <section class="content mt-28 md:px-20">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -20,8 +20,8 @@
                                         <th rowspan="2">No</th>
                                         <th rowspan="2">Pekerjaan</th>
                                         <th colspan="2">Jumlah</th>
-                                        <th colspan="2">Laki-laki</th>
-                                        <th colspan="2">Perempuan</th>
+                                    <th class="hidden md:table-cell" colspan="2">Laki-laki</th>
+                                    <th class="hidden md:table-cell" colspan="2">Perempuan</th>
                                     </tr>
                                     <tr>
                                         <th>n</th>

@@ -34,7 +34,7 @@ export default {
                 // primary: "#0677ba",
 
                 primary: "#0d9488",
-                secondary: "#facc15",
+                secondary: "#ffc700",
                 primaryhover: "#0f766e",
                 secondaryhover: "#6F984B",
 

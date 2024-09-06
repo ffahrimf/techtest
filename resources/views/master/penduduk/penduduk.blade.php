@@ -30,15 +30,15 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <div class="text-right">
+                                <div class="text-right py-1">
                                     <a href="/penduduk/create"
                                         class="text-white bg-teal-600 rounded-lg px-3 py-2 hover:bg-teal-700 transition font-medium duration-300 ease-in-out">Tambah
-                                        Penduduk</a>
+                                        <span class="hidden md:inline">Penduduk</span></a>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div style="overflow-x: auto">
-                                    <table id="example1" class="table table-striped table-bordered table-hover text-center"
+                                    <table id="example3" class="table table-striped table-bordered table-hover text-center"
                                         style="width: 100%">
                                         <thead>
                                             <tr>
@@ -101,34 +101,18 @@
                                                 </tr>
                                             @endforeach
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>NIK</th>
-                                                <th>KK</th>
-                                                <th>Nama</th>
-                                                <th>RT</th>
-                                                <th>RW</th>
-                                                <th>Dusun</th>
-                                                <th>Pendidikan</th>
-                                                <th>Pekerjaan</th>
-                                                <th>Agama</th>
-                                                <th>Perkawinan</th>
-                                                <th>Gol. Darah</th>
-                                                <th>SHDK</th>
-                                                <th>Ayah</th>
-                                                <th>Ibu</th>
-                                                <th>Kep. Keluarga</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
-    
+                                    <div class="mt-3 mb-3 flex md:justify-end justify-center">
+                                        {{ $penduduk->links('pagination::bootstrap-4') }}
+                                    </div>
+                                    <!-- Pagination Links -->
+                                    
                                 </div>
+
                             </div>
                         </div>
                         <!-- /.card-header -->
-                        
+
 
                     </div>
                     <!-- /.row -->
@@ -138,4 +122,6 @@
         </div>
     </div>
     </div>
+
+    
 @endsection

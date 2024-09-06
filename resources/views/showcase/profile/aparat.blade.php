@@ -6,7 +6,7 @@
     <div class="flex flex-col gap-7">
         <h1 class="mt-32 text-2xl md:text-4xl font-dmsans mx-10 md:mx-0">Aparatur <strong>Desa</strong></h1>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 mx-10 md:mx-auto gap-7 md:gap-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 mx-5 md:mx-auto gap-7 md:gap-16">
             <div class="relative md:w-56 flex-shrink-0">
                 <img src="/assets/img/aparat-desa/haris2.png" alt="Foto Aparatur"
                     class="w-full h-72 object-cover rounded-lg hover:brightness-75 transition-all duration-[1200ms] transform hover:scale-110">

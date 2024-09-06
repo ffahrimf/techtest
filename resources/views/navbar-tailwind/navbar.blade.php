@@ -125,6 +125,10 @@
                         <li class="md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out">
                             <a href="/showcase/berita" class="">Berita</a>
                         </li>
+                        <hr class="border-t-[1px] border-gray-300" />
+                        <li class="md:hidden md:hover:bg-transparent md:hover:text-primary transition duration-200 ease-in-out">
+                            <a href="/login" class="">Masuk</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="hidden md:block">

@@ -40,8 +40,8 @@
                             <th rowspan="2">No</th>
                             <th rowspan="2">Pendidikan</th>
                             <th colspan="2">Jumlah</th>
-                            <th colspan="2">Laki-laki</th>
-                            <th colspan="2">Perempuan</th>
+                                    <th class="hidden md:table-cell" colspan="2">Laki-laki</th>
+                                    <th class="hidden md:table-cell" colspan="2">Perempuan</th>
                         </tr>
                         <tr>
                             <th>n</th>

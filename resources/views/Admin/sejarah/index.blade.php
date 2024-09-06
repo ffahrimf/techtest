@@ -31,21 +31,20 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title">Sejarah</h5>
+                                    <div class="text-right">
+                                        <form class="d-inline" action="/admin/sejarah/{{ $data->id }}/edit"
+                                            method="GET">
+                                            <button type="submit" class="btn btn-warning btn-md mr-1"
+                                                style="color: white;">
+                                                <i class="fa-solid fa-pen"></i> Edit
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     {!! nl2br(e($data->content)) !!}
                                 </div>
                                 
-                                <div class="card-footer text-right">
-                                    <form class="d-inline" action="/admin/sejarah/{{ $data->id }}/edit"
-                                        method="GET">
-                                        <button type="submit" class="btn btn-warning btn-sm mr-1"
-                                            style="color: white;">
-                                            <i class="fa-solid fa-pen"></i> Edit
-                                        </button>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                     @endforeach

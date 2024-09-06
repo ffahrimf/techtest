@@ -14,19 +14,22 @@ class PendudukController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $user = auth()->user();
+{
+    $user = auth()->user();
 
-        if ($user->level == 'Admin') {
-            $penduduk = Penduduk::orderBy('nik', 'asc')->get();
-        } else {
-            $penduduk = Penduduk::where('dusun', $user->level)->orderBy('nik', 'asc')->get();
-        }
-
-        return view('master.penduduk.penduduk', [
-            'penduduk' => $penduduk
-        ]);
+    if ($user->level == 'Admin') {
+        // Paginate the result with 10 records per page for Admin
+        $penduduk = Penduduk::orderBy('nik', 'asc')->paginate(10);
+    } else {
+        // Paginate the result with 10 records per page for other users, filtered by 'dusun'
+        $penduduk = Penduduk::where('dusun', $user->level)->orderBy('nik', 'asc')->paginate(10);
     }
+
+    return view('master.penduduk.penduduk', [
+        'penduduk' => $penduduk
+    ]);
+}
+
 
 
     /**

@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Main content -->
-    <section class="content mt-28 px-20">
+    <section class="content mt-28 md:px-20">
         <div class="container-fluid">
             <div class="row">
               <div class="col-12">

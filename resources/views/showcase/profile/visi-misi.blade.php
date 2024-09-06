@@ -10,7 +10,7 @@
 
             @foreach ($visiMisi as $data)
                 <div
-                    class="flex flex-col mx-10 md:mx-0 font-dmsans gap-4 p-4 bg-white border border-gray-200 shadow-lg rounded-lg">
+                    class="flex flex-col mx-5 md:mx-0 font-dmsans gap-4 p-4 bg-white border border-gray-200 shadow-lg rounded-lg">
                     <h2 class="font-medium text-xl md:text-3xl text-primaryhover">Visi</h2>
                     <hr class="border-t-[1px] border-gray-300" />
                     <p>"{{ $data->visi }}".</p>
@@ -21,7 +21,7 @@
                     @foreach ($visiMisi as $data)
                         <div class="col-md-12 mb-4">
                             <div
-                                class="flex flex-col mx-10 md:mx-0 font-dmsans gap-4 p-4 bg-white border border-gray-200 shadow-lg rounded-lg">
+                                class="flex flex-col mx-5 md:mx-0 font-dmsans gap-4 p-4 bg-white border border-gray-200 shadow-lg rounded-lg">
                                 <h2 class="font-medium text-xl md:text-3xl text-primaryhover">Misi</h2>
                                 <hr class="border-t-[1px] border-gray-300" />
                                 @php
