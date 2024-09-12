@@ -212,20 +212,20 @@
                 {{-- </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ auth()->user()->name }}</a>
-                    </div>
-                </div> --}}
+            </div>
+    </div> --}}
 
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="assets/dist/img/boy.png" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="/dashboard" class="d-block">{{ auth()->user()->name }}</a>
-                    </div>
-                </div>
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            <img src="assets/dist/img/boy.png" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+            <a href="/dashboard" class="d-block">{{ auth()->user()->name }}</a>
+        </div>
+    </div>
 
-                <!-- SidebarSearch Form -->
-                {{-- <div class="form-inline">
+    <!-- SidebarSearch Form -->
+    {{-- <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
                         <input class="form-control form-control-sidebar" type="search" placeholder="Search"
                             aria-label="Search">
@@ -237,201 +237,41 @@
                     </div>
                 </div> --}}
 
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+            data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="/dashboard" class="nav-link">
-                                <i class="nav-icon fa-solid fa-gauge-high"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">  
-              <a href="/mobil" class="nav-link">
-                <i class="nav-icon fa-solid fa-box"></i>
-                <p>
-                  Mobil
-                </p>
-              </a>
-            </li> --}}
-
-                        @if (auth()->user()->level == 'Admin')
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-sitemap"></i>
-                                    <p>
-                                        Informasi
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/admin/visi-misi" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Visi Misi</p>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/admin/sejarah" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Sejarah</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/admin/lapakdesa" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Lapak Desa</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/admin/berita" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Berita Desa</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="/users" class="nav-link">
-                                    <i class="nav-icon fa-solid fa-key"></i>
-                                    <p>
-                                        User Management
-                                    </p>
-                                </a>
-                            </li>
-                        @endif
-                        <li class="nav-item">
-                            <a href="/penduduk" class="nav-link">
-                                <i class="nav-icon fa-solid fa-user"></i>
-                                <p>
-                                    Data Penduduk
-                                </p>
-                            </a>
-                        </li>
+            <li class="nav-item">
+                <a href="/dashboard" class="nav-link">
+                    <i class="nav-icon fa-solid fa-gauge-high"></i>
+                    <p>
+                        Dashboard
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/users" class="nav-link">
+                    <i class="nav-icon fa-solid fa-key"></i>
+                    <p>
+                        User Management
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item mt-3">
+                <form id="logging-out" action="/logout" method="POST" style="display: none;">
+                    @csrf
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </form>
+                <a href="#" class="nav-link log-out">
+                    <i class="nav-icon fa-solid fa-power-off" style="color: red"></i>
+                    <p>Logout</p>
+                </a>
+            </li>
 
 
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-database"></i>
-                                <p>
-                                    Master
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            @if (auth()->user()->level == 'Admin')
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/mpekerjaan" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Pekerjaan</p>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            @endif
-                            {{-- <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/penduduk" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Penduduk</p>
-                                    </a>
-                                </li>
-                            </ul> --}}
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/mdisabilitas" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Penyandang Disabilitas</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-simple"></i>
-                                <p>
-                                    Demografi
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-
-                                <li class="nav-item">
-                                    <a href="/pendidikan" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pendidikan</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/pekerjaan" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pekerjaan</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/agama" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Agama</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/jeniskelamin" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Jenis Kelamin</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/umur" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Umur</p>
-                                    </a>
-                                </li>
-                                @if (auth()->user()->level == 'Admin')
-                                    <li class="nav-item">
-                                        <a href="/luaswilayah" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                Luas Wilayah
-                                            </p>
-                                        </a>
-                                    </li>
-                                @endif
-                                <li class="nav-item">
-                                    <a href="/disabilitas" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Penyandang Disabilitas</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item mt-3">
-                            <form id="logging-out" action="/logout" method="POST" style="display: none;">
-                                @csrf
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            </form>
-                            <a href="#" class="nav-link log-out">
-                                <i class="nav-icon fa-solid fa-power-off" style="color: red"></i>
-                                <p>Logout</p>
-                            </a>
-                        </li>
-
-
-                        {{-- <li class="nav-item mt-3">
+            {{-- <li class="nav-item mt-3">
               <a class="log-out ml-3" href="#" class="nav-link">
                 <i class="nav-icon fa-solid fa-power-off" style="color: red;"></i>
                 Logout
@@ -440,39 +280,39 @@
                 </form>
               </a>
             </li> --}}
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
-        </aside>
+        </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+    </aside>
 
-        @yield('content')
+    @yield('content')
 
-        <!-- Content Wrapper. Contains page content -->
-        {{-- content here --}}
-        <!-- /.content-wrapper -->
+    <!-- Content Wrapper. Contains page content -->
+    {{-- content here --}}
+    <!-- /.content-wrapper -->
 
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="float-right d-none d-sm-inline">
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="float-right d-none d-sm-inline">
 
-            </div>
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2024 <a href="https://ffahrimf.vercel.app">SIPAGUNG</a>.</strong> All rights
-            reserved.
-        </footer>
+        </div>
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2024 <a href="https://ffahrimf.vercel.app">SIPAGUNG</a>.</strong> All rights
+        reserved.
+    </footer>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+        <div class="p-3">
+            <h5>Title</h5>
+            <p>Sidebar content</p>
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
 
 
     </div>
