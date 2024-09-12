@@ -93,7 +93,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="level">Level</label>
                                         <select name="level" class="form-control @error('level') is-invalid @enderror" id="level" required>
                                             <option value="Admin" {{ old('level') == 'Admin' ? 'selected' : '' }}>Admin</option>
@@ -108,7 +108,7 @@
                                         @error('level')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                         @enderror
-                                    </div>
+                                    </div> -->
 
                                 </div>
                                 <div class="card-footer text-right">

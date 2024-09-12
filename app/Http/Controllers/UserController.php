@@ -26,14 +26,12 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|unique:t_users,email',
             'password' => 'required|min:6|confirmed',
-            'level' => 'required|in:Admin,Pamekaran,Limusagung,Nanggeleng,Darawati,Mangunjaya,Cimaja,Cimanglid',
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'level' => $request->level,
+            'password' => Hash::make($request->password)
         ]);
 
         Alert::success('Success', 'Account has been saved!');
@@ -50,15 +48,14 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email|unique:t_users,email,' . $user->id_user . ',id_user',
-            'password' => 'nullable|min:6|confirmed',
-            'level' => 'required|in:Admin,Pamekaran,Limusagung,Nanggeleng,Darawati,Mangunjaya,Cimaja,Cimanglid',
+            'password' => 'nullable|min:6|confirmed'
         ]);
 
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password ? Hash::make($request->password) : $user->password,
-            'level' => $request->level,
+            // 'level' => $request->level,
         ]);
 
         Alert::info('Success', 'Account has been updated!');

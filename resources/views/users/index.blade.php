@@ -63,7 +63,7 @@
                                                             class="form-control-plaintext text-center"
                                                             style="border: none; background-color: transparent;" />
                                                     </td> --}}
-                                                    <td>{{ $data->level }}</td>
+                                                    <!-- <td>{{ $data->level }}</td> -->
                                                     <td>
                                                         <div class="btn-group">
                                                             <button type="button" class="btn btn-info">Action</button>

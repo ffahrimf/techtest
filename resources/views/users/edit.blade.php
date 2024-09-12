@@ -86,7 +86,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="level">Level</label>
                                         <select name="level" id="level" class="form-control @error('level') is-invalid @enderror" required>
                                             <option value="">Select Level</option>
@@ -102,7 +102,7 @@
                                         @error('level')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                         @enderror
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="card-footer text-right">
                                     <button class="btn btn-dark mr-1" type="reset"><i
