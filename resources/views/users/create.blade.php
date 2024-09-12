@@ -3,7 +3,6 @@
 @section('content')
 
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -16,16 +15,12 @@
                             <li class="breadcrumb-item"><a href="/users">Akun</a></li>
                             <li class="breadcrumb-item active">@yield('title')</li>
                         </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /.content-header -->
-
-        <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
@@ -93,23 +88,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- <div class="form-group">
-                                        <label for="level">Level</label>
-                                        <select name="level" class="form-control @error('level') is-invalid @enderror" id="level" required>
-                                            <option value="Admin" {{ old('level') == 'Admin' ? 'selected' : '' }}>Admin</option>
-                                            <option value="Pamekaran" {{ old('level') == 'Pamekaran' ? 'selected' : '' }}>Pamekaran</option>
-                                            <option value="Limusagung" {{ old('level') == 'Limusagung' ? 'selected' : '' }}>Limusagung</option>
-                                            <option value="Nanggeleng" {{ old('level') == 'Nanggeleng' ? 'selected' : '' }}>Nanggeleng</option>
-                                            <option value="Darawati" {{ old('level') == 'Darawati' ? 'selected' : '' }}>Darawati</option>
-                                            <option value="Mangunjaya" {{ old('level') == 'Mangunjaya' ? 'selected' : '' }}>Mangunjaya</option>
-                                            <option value="Cimaja" {{ old('level') == 'Cimaja' ? 'selected' : '' }}>Cimaja</option>
-                                            <option value="Cimanglid" {{ old('level') == 'Cimanglid' ? 'selected' : '' }}>Cimanglid</option>
-                                        </select>
-                                        @error('level')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div> -->
-
                                 </div>
                                 <div class="card-footer text-right">
                                     <button class="btn btn-dark mr-1" type="reset"><i
@@ -122,7 +100,6 @@
                             </form>
                         </div>
                     </div>
-                    <!-- /.content -->
                 </div>
             </div>
         </div>

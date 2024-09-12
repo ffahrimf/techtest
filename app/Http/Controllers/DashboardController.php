@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\{Disabilitas, Penduduk};
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -10,6 +10,10 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         $user = auth()->user();
-        return view('dashboard.dashboard');
+
+        $users = User::count();
+        return view('dashboard.dashboard', [
+            'users' => $users, // Pass the family count to the view
+        ]);
     }
 }

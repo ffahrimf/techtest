@@ -19,6 +19,8 @@
         "@fontsource/inter": "^5.0.20",
         "@fontsource/montserrat": "^5.0.18",
         "@fontsource/nunito": "^5.0.18",
-        "@fontsource/poppins": "^5.0.14"
+        "@fontsource/poppins": "^5.0.14",
+        "@preline/toggle-password": "^2.4.1",
+        "preline": "^2.4.1"
     }
 }

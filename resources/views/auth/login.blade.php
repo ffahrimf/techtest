@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
-    <link rel="shortcut icon" href="/assets/img/mountain.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/assets/img/option.png" type="image/x-icon" />
     <title>Login Page</title>
 
 </head>
@@ -15,16 +15,13 @@
 
     <section class="bg-gray-50 h-screen flex justify-center items-center dark:bg-gray-900 font-montserrat">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <a href="/"
-                class=" flex items-center mb-6 text-md md:text-2xl font-semibold text-gray-900 dark:text-white">
-                <img class="w-10 h-10 mr-2" src="assets/img/mountain.png" alt="logo">
-                Sistem Informasi <br class="md:hidden">Desa Payungagung</a>
+
             <div
-                class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                class="w-full md:w-96 bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1
                         class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                        Masuk ke akun anda
+                        Sign in to your account
                     </h1>
                     <form class="needs-validation space-y-4 md:space-y-6" novalidate action="/login" method="POST">
                         @csrf
@@ -50,20 +47,17 @@
                                         class="w-4 h-4 border border-gray-300 rounded text-primaryhover bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primaryhover dark:ring-offset-gray-800">
                                 </div>
                                 <div class="ml-2 text-xs md:text-sm">
-                                    <label for="remember" class="text-gray-500 dark:text-gray-300">Ingat saya</label>
+                                    <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
                                 </div>
                             </div>
                             <a href="#"
-                                class="text-xs md:text-sm font-medium text-teal-600 hover:underline dark:text-teal-500">Lupa
+                                class="text-xs md:text-sm font-medium text-teal-600 hover:underline dark:text-teal-500">Forgot
                                 password?</a>
                         </div>
                         <button type="submit"
-                            class="w-full text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">Log
+                            class="w-full text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800 transition ease-in-out duration-300">Sign
                             in</button>
-                        {{-- <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Belum punya akun? <a href="/register" class="font-medium text-teal-600 hover:underline dark:text-teal-500">Daftar</a>
-                  </p> --}}
-                    </form>
+                       </form>
                 </div>
             </div>
         </div>
@@ -75,24 +69,6 @@
 
     <script src="/assets/dist/js/adminlte.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script>
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                var forms = document.getElementsByClassName('needs-validation');
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-    </script>
 
 </body>
 
