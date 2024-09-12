@@ -202,7 +202,7 @@
                 "paging": false,
                 "ordering": false,
                 "info": false,
-                "searching": true,
+                "searching": false,
 
             }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
 
